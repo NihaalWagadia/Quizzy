@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">QuizzyDizzy</string>
+    <string name="sound">Sound</string>
+    <string name="level">Level</string>
+    <string name="play">Play</string>
+    <string name="quizzy">Quizzy!</string>
+    <string name="restart">Restart</string>
+    <string name="exit">Exit</string>
+    <string name="my_play">My Play</string>
+    <string name="my_level" />
+    <string name="my_exit" />
+    <string name="my_restart" />
 </resources>
