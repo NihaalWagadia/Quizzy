@@ -45,7 +45,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginEnd="30dp">
+                    android:layout_marginEnd="30dp"
+                    android:id="@+id/play_linear">
 
                     <ImageButton
                         android:layout_width="wrap_content"
@@ -53,7 +54,8 @@
                         android:contentDescription="@string/my_play"
                         android:src="@drawable/play"
                         android:tint="@color/shade_blue"
-                        android:id="@+id/play_image"/>
+                        android:id="@+id/play_image"
+                        android:onClick="onClicker"/>
 
 
                     <TextView
@@ -61,7 +63,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/play"
-                        android:textSize="23sp" />
+                        android:textSize="23sp"
+                        android:onClick="onClicker"/>
                 </LinearLayout>
 
                 <LinearLayout
