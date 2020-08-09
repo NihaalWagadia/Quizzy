@@ -4,17 +4,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import com.example.quizzydizzy.questionList.Question
 import kotlinx.android.synthetic.main.activity_play.*
 
 class PlayAct : AppCompatActivity() {
 
 
+    private var mCurrentPos: Int = 1
+    private var mQuestionList: ArrayList<Question>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
 
-        val questionList = Constants.getQuestions()
-        Log.i("Question List Size", "${questionList.size}")
+        mQuestionList = Constants.getQuestions()
+        setQuestion()
         val button1 = findViewById<Button>(R.id.one)
         val button2 = findViewById<Button>(R.id.two)
         val button3 = findViewById<Button>(R.id.three)
@@ -25,7 +29,7 @@ class PlayAct : AppCompatActivity() {
         val button8 = findViewById<Button>(R.id.eight)
         val button9 = findViewById<Button>(R.id.nine)
         val button0 = findViewById<Button>(R.id.zero)
-        val buttonClear = findViewById<Button>(R.id.clear)
+        val enter = findViewById<Button>(R.id.enter)
 
         button0.setOnClickListener {
             showResult("0", true)
@@ -57,20 +61,26 @@ class PlayAct : AppCompatActivity() {
         button9.setOnClickListener {
             showResult("9", true)
         }
-        buttonClear.setOnClickListener {
+        clear.setOnClickListener {
             answer_input.text = ""
         }
 
 
 
+
     }
 
 
-}
-
-fun showResult(string: String, canClear: Boolean) {
-    if (canClear) {
-        answer_input.append(string)
+    fun showResult(string: String, canClear: Boolean) {
+        if (canClear) {
+            answer_input.append(string)
+        }
     }
-}
+
+    private  fun setQuestion(){
+        mCurrentPos = 1
+        val question = mQuestionList!![mCurrentPos-1]
+        question_image.text = question!!.question
+
+    }
 }
