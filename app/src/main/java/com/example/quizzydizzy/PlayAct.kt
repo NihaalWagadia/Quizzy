@@ -1,9 +1,11 @@
 package com.example.quizzydizzy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 import com.example.quizzydizzy.questionList.Question
 import kotlinx.android.synthetic.main.activity_play.*
 
@@ -64,9 +66,34 @@ class PlayAct : AppCompatActivity() {
         clear.setOnClickListener {
             answer_input.text = ""
         }
+        enter.setOnClickListener {
 
+                val question = mQuestionList?.get(mCurrentPos-1)
+                if(question!!.correctAnswer.compareTo(answer_input.text.toString())==0){
+                    Toast.makeText(this, "You're right", Toast.LENGTH_SHORT).show()
+                    mCurrentPos++
+                    answer_input.text = null
+                    when {
+                        mCurrentPos <= mQuestionList!!.size -> {
+                            setQuestion()
+                        }
+                        else -> {
+                            Toast.makeText(this, "You're done", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
+                    }
+                }
+                else{
+                    Toast.makeText(this, "Wrong answer", Toast.LENGTH_SHORT).show()
+                }
 
+                if(mCurrentPos == mQuestionList!!.size){
+                    Log.d("Enter Final Screen", "Congrats Screen")
+                }
 
+            }
 
     }
 
@@ -77,9 +104,11 @@ class PlayAct : AppCompatActivity() {
         }
     }
 
-    private  fun setQuestion(){
-        mCurrentPos = 1
-        val question = mQuestionList!![mCurrentPos-1]
+    private fun setQuestion() {
+        val question = mQuestionList!![mCurrentPos - 1]
+//        if(mCurrentPos == mQuestionList!!.size){
+//            Toast.makeText(this, "Congrats", Toast.LENGTH_SHORT).show()
+//        }
         question_image.text = question!!.question
 
     }
