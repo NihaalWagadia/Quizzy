@@ -24,4 +24,7 @@
     <string name="hint_icon">Hint icon</string>
     <string name="x">X</string>
     <string name="enter">Enter</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="congratulations_you_have_mastered">Congratulations you have mastered</string>
+    <string name="play_again">Play Again</string>
 </resources>

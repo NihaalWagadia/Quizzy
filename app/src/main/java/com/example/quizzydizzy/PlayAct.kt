@@ -78,8 +78,8 @@ class PlayAct : AppCompatActivity() {
                             setQuestion()
                         }
                         else -> {
-                            Toast.makeText(this, "You're done", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, MainActivity::class.java)
+                            //Toast.makeText(this, "You're done", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, CompletionActivity::class.java)
                             startActivity(intent)
                             finish()
                         }
