@@ -1,6 +1,8 @@
 package com.example.quizzydizzy
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,18 +10,21 @@ import android.widget.Button
 import android.widget.Toast
 import com.example.quizzydizzy.questionList.Question
 import kotlinx.android.synthetic.main.activity_play.*
+import java.util.zip.CheckedOutputStream
 
 class PlayAct : AppCompatActivity() {
 
 
     private var mCurrentPos: Int = 1
     private var mQuestionList: ArrayList<Question>? = null
+    private var Counter:String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
 
         mQuestionList = Constants.getQuestions()
+        LoadPrefrences()
         setQuestion()
         val button1 = findViewById<Button>(R.id.one)
         val button2 = findViewById<Button>(R.id.two)
@@ -112,4 +117,43 @@ class PlayAct : AppCompatActivity() {
         question_image.text = question!!.question
 
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("CurrentPosition", mCurrentPos)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        mCurrentPos = (savedInstanceState.getInt("CurrentPosition"))
+    }
+
+    override fun onBackPressed() {
+        savePreference()
+        super.onBackPressed()
+    }
+
+    private fun savePreference(){
+        val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        editor.putInt(Counter, mCurrentPos)
+        editor.apply()
+    }
+
+    override fun onStop() {
+        savePreference()
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        savePreference()
+        super.onDestroy()
+    }
+
+    fun LoadPrefrences(){
+        val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
+        mCurrentPos = sharedPreferences.getInt(Counter, 1)
+
+    }
+
 }
