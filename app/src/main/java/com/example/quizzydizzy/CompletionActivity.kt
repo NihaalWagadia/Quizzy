@@ -14,7 +14,6 @@ class CompletionActivity : AppCompatActivity() {
 
     fun playAgain(v: View?){
         val intent = Intent(this, MainActivity::class.java)
-
         startActivity(intent)
         finish()
     }

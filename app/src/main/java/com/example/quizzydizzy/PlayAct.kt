@@ -1,8 +1,13 @@
 package com.example.quizzydizzy
 
+import android.app.backup.FileBackupHelper
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.media.AudioAttributes
+import android.media.MediaPlayer
+import android.media.SoundPool
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,14 +15,15 @@ import android.widget.Button
 import android.widget.Toast
 import com.example.quizzydizzy.questionList.Question
 import kotlinx.android.synthetic.main.activity_play.*
-import java.util.zip.CheckedOutputStream
 
 class PlayAct : AppCompatActivity() {
 
 
     private var mCurrentPos: Int = 1
     private var mQuestionList: ArrayList<Question>? = null
-    private var Counter:String? = null
+    private var counts: String? = null
+    internal var mMediaPlayer : MediaPlayer?= null
+    internal lateinit var list:MutableList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,6 +84,9 @@ class PlayAct : AppCompatActivity() {
                     Toast.makeText(this, "You're right", Toast.LENGTH_SHORT).show()
                     mCurrentPos++
                     answer_input.text = null
+                    mMediaPlayer = MediaPlayer.create(this, R.raw.right_answer)
+                    mMediaPlayer?.start()
+
                     when {
                         mCurrentPos <= mQuestionList!!.size -> {
                             setQuestion()
@@ -111,10 +120,8 @@ class PlayAct : AppCompatActivity() {
 
     private fun setQuestion() {
         val question = mQuestionList!![mCurrentPos - 1]
-//        if(mCurrentPos == mQuestionList!!.size){
-//            Toast.makeText(this, "Congrats", Toast.LENGTH_SHORT).show()
-//        }
         question_image.text = question!!.question
+        topic_problem_name.text = question!!.topicName
 
     }
 
@@ -136,7 +143,7 @@ class PlayAct : AppCompatActivity() {
     private fun savePreference(){
         val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
-        editor.putInt(Counter, mCurrentPos)
+        editor.putInt(counts, mCurrentPos)
         editor.apply()
     }
 
@@ -148,12 +155,19 @@ class PlayAct : AppCompatActivity() {
     override fun onDestroy() {
         savePreference()
         super.onDestroy()
+        
     }
 
     fun LoadPrefrences(){
         val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
-        mCurrentPos = sharedPreferences.getInt(Counter, 1)
+        mCurrentPos = sharedPreferences.getInt(counts, 1)
 
+    }
+
+    fun Oscheck(){
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
+            var audioAttributes:AudioAttributes
+        }
     }
 
 }
