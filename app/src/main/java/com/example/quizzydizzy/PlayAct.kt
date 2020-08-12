@@ -22,15 +22,17 @@ class PlayAct : AppCompatActivity() {
     private var mCurrentPos: Int = 1
     private var mQuestionList: ArrayList<Question>? = null
     private var counts: String? = null
-    internal var mMediaPlayer : MediaPlayer?= null
-    internal lateinit var list:MutableList<String>
+    internal var mMediaPlayer: MediaPlayer? = null
+    var muted: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
+        Log.d("first", muted.toString())
 
         mQuestionList = Constants.getQuestions()
-        LoadPrefrences()
+        loadPreferences()
         setQuestion()
         val button1 = findViewById<Button>(R.id.one)
         val button2 = findViewById<Button>(R.id.two)
@@ -79,40 +81,43 @@ class PlayAct : AppCompatActivity() {
         }
         enter.setOnClickListener {
 
-                val question = mQuestionList?.get(mCurrentPos-1)
-                if(question!!.correctAnswer.compareTo(answer_input.text.toString())==0){
-                    Toast.makeText(this, "You're right", Toast.LENGTH_SHORT).show()
-                    mCurrentPos++
-                    answer_input.text = null
-                    mMediaPlayer = MediaPlayer.create(this, R.raw.right_answer)
-                    mMediaPlayer?.start()
+            val question = mQuestionList?.get(mCurrentPos - 1)
+            if (question!!.correctAnswer.compareTo(answer_input.text.toString()) == 0) {
+                Toast.makeText(this, "You're right", Toast.LENGTH_SHORT).show()
+                mCurrentPos++
+                answer_input.text = null
+                mMediaPlayer = MediaPlayer.create(this, R.raw.right_answer)
+                Log.d("Logged", muted.toString())
 
-                    when {
-                        mCurrentPos <= mQuestionList!!.size -> {
-                            setQuestion()
-                        }
-                        else -> {
-                            //Toast.makeText(this, "You're done", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, CompletionActivity::class.java)
-                            startActivity(intent)
-                            finish()
-                        }
+                if (muted==0) {
+                    Log.d("MutedVal", muted.toString())
+                    mMediaPlayer?.start()
+                }
+                when {
+                    mCurrentPos <= mQuestionList!!.size -> {
+                        setQuestion()
+                    }
+                    else -> {
+                        //Toast.makeText(this, "You're done", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, CompletionActivity::class.java)
+                        startActivity(intent)
+                        finish()
                     }
                 }
-                else{
-                    Toast.makeText(this, "Wrong answer", Toast.LENGTH_SHORT).show()
-                }
-
-                if(mCurrentPos == mQuestionList!!.size){
-                    Log.d("Enter Final Screen", "Congrats Screen")
-                }
-
+            } else {
+                Toast.makeText(this, "Wrong answer", Toast.LENGTH_SHORT).show()
             }
+
+            if (mCurrentPos == mQuestionList!!.size) {
+                Log.d("Enter Final Screen", "Congrats Screen")
+            }
+
+        }
 
     }
 
 
-    fun showResult(string: String, canClear: Boolean) {
+    private fun showResult(string: String, canClear: Boolean) {
         if (canClear) {
             answer_input.append(string)
         }
@@ -125,14 +130,11 @@ class PlayAct : AppCompatActivity() {
 
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putInt("CurrentPosition", mCurrentPos)
-    }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         mCurrentPos = (savedInstanceState.getInt("CurrentPosition"))
+        muted = (savedInstanceState.getInt("mutedCond"))
     }
 
     override fun onBackPressed() {
@@ -140,10 +142,12 @@ class PlayAct : AppCompatActivity() {
         super.onBackPressed()
     }
 
-    private fun savePreference(){
+    private fun savePreference() {
         val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putInt(counts, mCurrentPos)
+        editor.putInt("mutedCond", muted)
+        Log.d("MutedVal", muted.toString())
         editor.apply()
     }
 
@@ -155,19 +159,22 @@ class PlayAct : AppCompatActivity() {
     override fun onDestroy() {
         savePreference()
         super.onDestroy()
-        
+
     }
 
-    fun LoadPrefrences(){
+    override fun onPause() {
+        savePreference()
+        super.onPause()
+    }
+
+    private fun loadPreferences() {
         val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
         mCurrentPos = sharedPreferences.getInt(counts, 1)
+        muted = sharedPreferences.getInt("mutedCond", muted)
+        Log.d("MutedVal", muted.toString())
+        muted = intent.getIntExtra("mutedCond",muted)
 
-    }
 
-    fun Oscheck(){
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
-            var audioAttributes:AudioAttributes
-        }
     }
 
 }
