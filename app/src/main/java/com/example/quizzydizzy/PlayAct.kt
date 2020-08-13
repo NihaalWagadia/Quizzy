@@ -29,7 +29,6 @@ class PlayAct : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
-        Log.d("first", muted.toString())
 
         mQuestionList = Constants.getQuestions()
         loadPreferences()
@@ -87,10 +86,8 @@ class PlayAct : AppCompatActivity() {
                 mCurrentPos++
                 answer_input.text = null
                 mMediaPlayer = MediaPlayer.create(this, R.raw.right_answer)
-                Log.d("Logged", muted.toString())
 
-                if (muted==0) {
-                    Log.d("MutedVal", muted.toString())
+                if (muted == 0) {
                     mMediaPlayer?.start()
                 }
                 when {
@@ -147,7 +144,6 @@ class PlayAct : AppCompatActivity() {
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putInt(counts, mCurrentPos)
         editor.putInt("mutedCond", muted)
-        Log.d("MutedVal", muted.toString())
         editor.apply()
     }
 
@@ -171,9 +167,7 @@ class PlayAct : AppCompatActivity() {
         val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
         mCurrentPos = sharedPreferences.getInt(counts, 1)
         muted = sharedPreferences.getInt("mutedCond", muted)
-        Log.d("MutedVal", muted.toString())
-        muted = intent.getIntExtra("mutedCond",muted)
-
+        muted = intent.getIntExtra("mutedCond", muted)
 
     }
 

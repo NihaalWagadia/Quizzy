@@ -144,14 +144,16 @@
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/my_restart"
                         android:src="@drawable/restart"
-                        android:tint="@color/shade_blue" />
+                        android:tint="@color/shade_blue"
+                        android:onClick="clearData"/>
 
                     <TextView
                         android:id="@+id/restart"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/restart"
-                        android:textSize="23sp" />
+                        android:textSize="23sp"
+                        android:onClick="clearData"/>
                 </LinearLayout>
             </LinearLayout>
 
