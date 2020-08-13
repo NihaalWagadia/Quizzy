@@ -41,18 +41,27 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun clearData(v:View?){
-        val sharedPreferences: SharedPreferences = getSharedPreferences("PlayAct", Context.MODE_PRIVATE)
+    fun clearData(v: View?) {
+        val sharedPreferences: SharedPreferences =
+            getSharedPreferences("PlayAct", Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.clear()
         editor.apply()
-        //finish()
     }
+
     private fun savePreference() {
         val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putInt("mutedCond", muted)
         editor.apply()
+        finish()
+    }
+
+    fun gotoLevel(v: View?) {
+        val intent = Intent(this, LevelAct::class.java)
+        intent.putExtra("mutedCond", muted)
+        savePreference()
+        startActivity(intent)
         finish()
     }
 
@@ -98,7 +107,6 @@ class MainActivity : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         muted = (savedInstanceState.getInt("mutedCond"))
     }
-
 
 
 }
