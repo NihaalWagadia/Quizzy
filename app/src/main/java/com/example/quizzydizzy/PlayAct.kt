@@ -24,12 +24,14 @@ class PlayAct : AppCompatActivity() {
     private var counts: String? = null
     internal var mMediaPlayer: MediaPlayer? = null
     var muted: Int = 0
+    var mFromLevel:Int=-1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
 
+        mFromLevel = intent.getIntExtra("openLevel", mFromLevel)
         mQuestionList = Constants.getQuestions()
         loadPreferences()
         setQuestion()
@@ -165,7 +167,14 @@ class PlayAct : AppCompatActivity() {
 
     private fun loadPreferences() {
         val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
-        mCurrentPos = sharedPreferences.getInt(counts, 1)
+        if(mFromLevel==-1){
+            mCurrentPos = sharedPreferences.getInt(counts, 1)
+        }
+        else
+        {
+            mCurrentPos=mFromLevel
+        }
+        //mCurrentPos = sharedPreferences.getInt(counts, 1)
         muted = sharedPreferences.getInt("mutedCond", muted)
         muted = intent.getIntExtra("mutedCond", muted)
 

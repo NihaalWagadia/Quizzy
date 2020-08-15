@@ -127,8 +127,8 @@
                     <!--                        android:textSize="23sp" />-->
                     <Button
                         android:id="@+id/sound_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="130dp"
+                        android:layout_height="60dp"
                         android:onClick="soundAdjust" />
 
                 </LinearLayout>
