@@ -16,9 +16,6 @@ class LevelAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level)
 
-//        val actionBar = supportActionBar
-//        actionBar!!.title = "WOOFWOOOF"
-//        actionBar.setDisplayHomeAsUpEnabled(true)
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.title="WEEWEWEWE"
@@ -40,8 +37,4 @@ class LevelAct : AppCompatActivity() {
         return true
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//
-//        return super.onOptionsItemSelected(item)
-//    }
 }

@@ -1,5 +1,6 @@
 package com.example.quizzydizzy
 
+import android.app.Activity
 import android.app.backup.FileBackupHelper
 import android.content.Context
 import android.content.Intent
@@ -124,17 +125,14 @@ class PlayAct : AppCompatActivity() {
     }
 
 
-//    override fun onSupportNavigateUp(): Boolean {
-//        savePreference()
-//        return true
-//    }
-
     override fun onSupportNavigateUp(): Boolean {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
         return true
     }
+
+
 
     private fun showResult(string: String, canClear: Boolean) {
         if (canClear) {
@@ -159,6 +157,7 @@ class PlayAct : AppCompatActivity() {
     override fun onBackPressed() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(0,0)
         finish()
         savePreference()
         super.onBackPressed()
