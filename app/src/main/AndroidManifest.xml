@@ -9,14 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CompletionActivity"></activity>
+        <activity android:name=".CompletionActivity" />
         <activity
             android:name=".PlayAct"
-            android:screenOrientation="portrait"></activity>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme"
+
+            />
         <activity
             android:name=".LevelAct"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme"></activity>
+            android:theme="@style/NoActionBarTheme"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"

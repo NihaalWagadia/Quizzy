@@ -13,6 +13,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import android.widget.Toolbar
 import com.example.quizzydizzy.questionList.Question
 import kotlinx.android.synthetic.main.activity_play.*
 
@@ -30,6 +31,13 @@ class PlayAct : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
+
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.title="WEEWEWEWE"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setHomeButtonEnabled(true)
+
 
         mFromLevel = intent.getIntExtra("openLevel", mFromLevel)
         mQuestionList = Constants.getQuestions()
@@ -116,6 +124,18 @@ class PlayAct : AppCompatActivity() {
     }
 
 
+//    override fun onSupportNavigateUp(): Boolean {
+//        savePreference()
+//        return true
+//    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+        return true
+    }
+
     private fun showResult(string: String, canClear: Boolean) {
         if (canClear) {
             answer_input.append(string)
@@ -137,6 +157,9 @@ class PlayAct : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
         savePreference()
         super.onBackPressed()
     }
@@ -172,7 +195,7 @@ class PlayAct : AppCompatActivity() {
         }
         else
         {
-            mCurrentPos=mFromLevel
+            mCurrentPos=mFromLevel+1
         }
         //mCurrentPos = sharedPreferences.getInt(counts, 1)
         muted = sharedPreferences.getInt("mutedCond", muted)
