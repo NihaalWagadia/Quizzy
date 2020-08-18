@@ -36,11 +36,6 @@ class PlayAct : Immersive() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
 
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar!!.title = "WEEWEWEWE"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setHomeButtonEnabled(true)
 
 
         mFromLevel = intent.getIntExtra("openLevel", mFromLevel)
@@ -138,11 +133,10 @@ class PlayAct : Immersive() {
     }
 
 
-    override fun onSupportNavigateUp(): Boolean {
+    fun goBack(v: View?){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
-        return true
     }
 
 
@@ -155,7 +149,6 @@ class PlayAct : Immersive() {
     private fun setQuestion() {
         val question = mQuestionList!![mCurrentPos - 1]
         question_image.text = question!!.question
-        topic_problem_name.text = question!!.topicName
 
     }
 

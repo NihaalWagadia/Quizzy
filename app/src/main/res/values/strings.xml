@@ -30,4 +30,7 @@
     <string name="topic">TOPIC:-</string>
     <string name="problem_name">Problem Name</string>
     <string name="cool">Cool!</string>
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="tier">Tier</string>
+    <string name="levelInLevel">LEVEL</string>
 </resources>

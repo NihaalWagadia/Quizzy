@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.quizzydizzy.questionList.Question
@@ -16,25 +17,22 @@ class LevelAct : Immersive() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level)
 
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar!!.title="WEEWEWEWE"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setHomeButtonEnabled(true)
-
-
         mQuestionList = Constants.getQuestions()
         val adapter = AdapterLevel(mQuestionList, this)
         recycler_view.layoutManager = LinearLayoutManager(this)
         recycler_view.adapter = adapter
 
     }
-
-    override fun onSupportNavigateUp(): Boolean {
+    fun goBack(v: View?){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
-        return true
     }
+//    override fun onSupportNavigateUp(): Boolean {
+//        val intent = Intent(this, MainActivity::class.java)
+//        startActivity(intent)
+//        finish()
+//        return true
+//    }
 
 }
