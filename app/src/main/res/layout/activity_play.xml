@@ -14,14 +14,42 @@
         android:weightSum="100">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/toolbar"
-            android:background="@color/design_default_color_error"/>
+            android:background="@color/design_default_color_error" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="30">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_for_solution"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/sol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|center" />
+
+                <TextView
+                    android:id="@+id/cool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:gravity="center"
+                    android:text="@string/cool"
+                    android:textSize="25sp"
+                    android:onClick="closeCard"/>
+
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/question_image"
@@ -33,20 +61,22 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/answer_hint"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_alignParentRight="true"
                 android:contentDescription="@string/hint_icon"
-                android:src="@drawable/exit"/>
+                android:onClick="answerHint"
+                android:src="@drawable/exit" />
 
             <TextView
+                android:id="@+id/topic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="30sp"
                 android:layout_alignParentStart="true"
-                android:textStyle="bold"
                 android:text="@string/topic"
-                android:id="@+id/topic"/>
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/topic_problem_name"

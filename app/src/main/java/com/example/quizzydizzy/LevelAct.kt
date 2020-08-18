@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.quizzydizzy.questionList.Question
 import kotlinx.android.synthetic.main.activity_level.*
 
-class LevelAct : AppCompatActivity() {
+class LevelAct : Immersive() {
     private lateinit var mQuestionList: ArrayList<Question>
 
     override fun onCreate(savedInstanceState: Bundle?) {

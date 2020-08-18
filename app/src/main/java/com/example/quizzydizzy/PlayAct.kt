@@ -12,13 +12,14 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import android.widget.Toolbar
 import com.example.quizzydizzy.questionList.Question
 import kotlinx.android.synthetic.main.activity_play.*
 
-class PlayAct : AppCompatActivity() {
+class PlayAct : Immersive() {
 
 
     private var mCurrentPos: Int = 1
@@ -26,7 +27,9 @@ class PlayAct : AppCompatActivity() {
     private var counts: String? = null
     internal var mMediaPlayer: MediaPlayer? = null
     var muted: Int = 0
-    var mFromLevel:Int=-1
+    var mFromLevel: Int = -1
+    var showView: Boolean =false
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +38,7 @@ class PlayAct : AppCompatActivity() {
 
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar!!.title="WEEWEWEWE"
+        supportActionBar!!.title = "WEEWEWEWE"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeButtonEnabled(true)
 
@@ -124,6 +127,16 @@ class PlayAct : AppCompatActivity() {
 
     }
 
+    fun answerHint(v: View?){
+        card_for_solution.visibility = View.VISIBLE
+        val question = mQuestionList!![mCurrentPos - 1]
+            sol.text= question!!.topicSolution
+    }
+
+    fun closeCard(v:View?){
+        card_for_solution.visibility = View.GONE
+    }
+
 
     override fun onSupportNavigateUp(): Boolean {
         val intent = Intent(this, MainActivity::class.java)
@@ -131,7 +144,6 @@ class PlayAct : AppCompatActivity() {
         finish()
         return true
     }
-
 
 
     private fun showResult(string: String, canClear: Boolean) {
@@ -157,7 +169,7 @@ class PlayAct : AppCompatActivity() {
     override fun onBackPressed() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-        overridePendingTransition(0,0)
+        overridePendingTransition(0, 0)
         finish()
         savePreference()
         super.onBackPressed()
@@ -189,12 +201,10 @@ class PlayAct : AppCompatActivity() {
 
     private fun loadPreferences() {
         val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
-        if(mFromLevel==-1){
+        if (mFromLevel == -1) {
             mCurrentPos = sharedPreferences.getInt(counts, 1)
-        }
-        else
-        {
-            mCurrentPos=mFromLevel+1
+        } else {
+            mCurrentPos = mFromLevel + 1
         }
         //mCurrentPos = sharedPreferences.getInt(counts, 1)
         muted = sharedPreferences.getInt("mutedCond", muted)

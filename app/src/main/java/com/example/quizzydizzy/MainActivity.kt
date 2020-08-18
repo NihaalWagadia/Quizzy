@@ -12,15 +12,18 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 //0 is on
-class MainActivity : AppCompatActivity() {
+class MainActivity : Immersive() {
     var mAudioManager: AudioManager? = null
     var muted: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         loadPreferences()
     }
+
+
+
+
 
     fun onClicker(v: View?) {
         val intent = Intent(this, PlayAct::class.java)
@@ -54,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putInt("mutedCond", muted)
         editor.apply()
-        finish()
+
     }
 
     fun gotoLevel(v: View?) {
@@ -74,22 +77,19 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         savePreference()
         super.onStop()
-    }
-
-    override fun onDestroy() {
-        savePreference()
-        super.onDestroy()
 
     }
 
     override fun onBackPressed() {
         savePreference()
         super.onBackPressed()
+
     }
 
     override fun onPause() {
         savePreference()
         super.onPause()
+
     }
 
     override fun onStart() {
