@@ -5,12 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PlayAct">
+    tools:context=".PlayAct"
+   >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="30dp"
+        android:elevation="50dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="#757575"
         android:weightSum="100">
 
 
@@ -51,6 +67,8 @@
                 android:layout_centerVertical="true"
                 android:visibility="gone">
 
+
+
                 <TextView
                     android:id="@+id/sol"
                     android:layout_width="match_parent"
@@ -70,6 +88,16 @@
 
             </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="50dp"
+                app:cardCornerRadius="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
             <TextView
                 android:id="@+id/question_image"
                 android:layout_width="match_parent"
@@ -77,18 +105,19 @@
                 android:gravity="center_horizontal|center"
                 android:text="Question"
                 android:textSize="50sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="#BDBDBD"/>
 
-            <ImageView
-                android:id="@+id/answer_hint"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_alignParentRight="true"
-                android:contentDescription="@string/hint_icon"
-                android:onClick="answerHint"
-                android:src="@drawable/exit" />
+                <ImageView
+                    android:id="@+id/answer_hint"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center|top"
+                    android:contentDescription="@string/hint_icon"
+                    android:onClick="answerHint"
+                    android:src="@drawable/hint" />
 
-
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
@@ -254,6 +283,8 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 
 </RelativeLayout>
