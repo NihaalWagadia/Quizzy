@@ -5,284 +5,308 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PlayAct"
-   >
+    tools:context=".PlayAct">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
-        app:cardCornerRadius="30dp"
-        android:elevation="50dp">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#757575"
-        android:weightSum="100">
-
-
-        <RelativeLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/go_back"
-                android:src="@drawable/ic_baseline_arrow_back_24"
-                android:background="@android:color/transparent"
-                android:onClick="goBack"/>
-
-            <TextView
-                android:id="@+id/level_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/levelInLevel"
-                android:textSize="30sp"
-                android:layout_gravity="center_vertical"
-                android:textStyle="bold"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="30">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_for_solution"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:visibility="gone">
-
-
-
-                <TextView
-                    android:id="@+id/sol"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical|center" />
-
-                <TextView
-                    android:id="@+id/cool"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:gravity="center"
-                    android:text="@string/cool"
-                    android:textSize="25sp"
-                    android:onClick="closeCard"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:elevation="50dp"
-                app:cardCornerRadius="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
-
-            <TextView
-                android:id="@+id/question_image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|center"
-                android:text="Question"
-                android:textSize="50sp"
-                android:textStyle="bold"
-                android:background="#BDBDBD"/>
-
-                <ImageView
-                    android:id="@+id/answer_hint"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_gravity="center|top"
-                    android:contentDescription="@string/hint_icon"
-                    android:onClick="answerHint"
-                    android:src="@drawable/hint" />
-
-            </androidx.cardview.widget.CardView>
-
-        </RelativeLayout>
-
+        android:layout_marginBottom="10dp"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:cardCornerRadius="30dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="70"
+            android:background="#F5F5F5"
             android:orientation="vertical"
-            android:weightSum="120">
+            android:weightSum="100">
 
-            <LinearLayout
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="40"
-                android:orientation="horizontal"
-                android:weightSum="5">
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/go_back"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="goBack"
+                    android:src="@drawable/ic_baseline_arrow_back_24" />
 
                 <TextView
-                    android:id="@+id/answer_input"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:gravity="center_horizontal|center"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:id="@+id/clear"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center"
-                    android:text="@string/x"
-                    android:textSize="25sp" />
-
-                <Button
-                    android:id="@+id/enter"
+                    android:id="@+id/level_number"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="@string/enter" />
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/levelInLevel"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
-            </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="30">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_for_solution"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:id="@+id/sol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical|center" />
+
+                    <TextView
+                        android:id="@+id/cool"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:gravity="center"
+                        android:onClick="closeCard"
+                        android:text="@string/cool"
+                        android:textSize="25sp" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:elevation="50dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:id="@+id/question_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#BDBDBD"
+                        android:gravity="center_horizontal|center"
+                        android:text="@string/question"
+                        android:textSize="50sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/answer_hint"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center|top"
+                        android:contentDescription="@string/hint_icon"
+                        android:onClick="answerHint"
+                        android:src="@drawable/hint" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="40"
-                android:orientation="horizontal"
-                android:weightSum="5">
+                android:layout_weight="70"
+                android:orientation="vertical"
+                android:weightSum="120">
 
-                <Button
-                    android:id="@+id/one"
-                    android:layout_width="75dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal"
-                    android:text="@string/_1"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:layout_weight="40"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
 
-                <Button
-                    android:id="@+id/two"
-                    android:layout_width="75dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal"
-                    android:text="@string/_2"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/answer_input"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="3"
+                        android:background="@drawable/box"
+                        android:gravity="center_horizontal|center"
+                        android:text="Input"
+                        android:textSize="20sp" />
 
-                <Button
-                    android:id="@+id/three"
-                    android:layout_width="75dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal"
-                    android:text="@string/_3"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/clear"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/box"
+                        android:gravity="center_horizontal|center"
+                        android:text="@string/x"
+                        android:textSize="25sp" />
 
-                <Button
-                    android:id="@+id/four"
-                    android:layout_width="75dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal"
-                    android:text="@string/_4"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/enter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/box"
+                        android:text="@string/submit" />
 
-                <Button
-                    android:id="@+id/five"
-                    android:layout_width="75dp"
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal"
-                    android:text="@string/_5"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:layout_weight="40"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/one"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal"
+                        android:text="@string/_1"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                    <Button
+                        android:id="@+id/two"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal"
+                        android:text="@string/_2"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                    <Button
+                        android:id="@+id/three"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal"
+                        android:text="@string/_3"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                    <Button
+                        android:id="@+id/four"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal"
+                        android:text="@string/_4"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                    <Button
+                        android:id="@+id/five"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal"
+                        android:text="@string/_5"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <Button
+                        android:id="@+id/six"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal"
+                        android:text="@string/_6"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                    <Button
+                        android:id="@+id/seven"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal"
+                        android:text="@string/_7"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                    <Button
+                        android:id="@+id/eight"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal"
+                        android:text="@string/_8"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                    <Button
+                        android:id="@+id/nine"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal"
+                        android:text="@string/_9"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                    <Button
+                        android:id="@+id/zero"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_horizontal"
+                        android:text="@string/_0"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+                </LinearLayout>
+
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="40"
-                android:orientation="horizontal"
-                android:weightSum="5">
-
-                <Button
-                    android:id="@+id/six"
-                    android:layout_width="75dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal"
-                    android:text="@string/_6"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/seven"
-                    android:layout_width="75dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal"
-                    android:text="@string/_7"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/eight"
-                    android:layout_width="75dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal"
-                    android:text="@string/_8"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/nine"
-                    android:layout_width="75dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal"
-                    android:text="@string/_9"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/zero"
-                    android:layout_width="75dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center|center_horizontal"
-                    android:text="@string/_0"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
 
         </LinearLayout>
-
-    </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
