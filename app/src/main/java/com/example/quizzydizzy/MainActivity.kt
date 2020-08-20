@@ -9,12 +9,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import com.example.quizzydizzy.questionList.Question
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
 
 //0 is on
 class MainActivity : Immersive() {
     var mAudioManager: AudioManager? = null
     var muted: Int = 0
+    private var mQuestionList: ArrayList<Question>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,12 +27,9 @@ class MainActivity : Immersive() {
     }
 
 
-
-
-
     fun onClicker(v: View?) {
         val intent = Intent(this, PlayAct::class.java)
-        intent.putExtra("mutedCond", muted)
+        intent.putExtra(Constants.PROPERTY_MUTED, muted)
         savePreference()
         startActivity(intent)
         finish()
@@ -53,24 +55,24 @@ class MainActivity : Immersive() {
     }
 
     private fun savePreference() {
-        val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(Constants.SHARED_FILENAME,Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
-        editor.putInt("mutedCond", muted)
+        editor.putInt(Constants.PROPERTY_MUTED, muted)
         editor.apply()
 
     }
 
     fun gotoLevel(v: View?) {
         val intent = Intent(this, LevelAct::class.java)
-        intent.putExtra("mutedCond", muted)
+        intent.putExtra(Constants.PROPERTY_MUTED, muted)
         savePreference()
         startActivity(intent)
         finish()
     }
 
     private fun loadPreferences() {
-        val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
-        muted = sharedPreferences.getInt("mutedCond", 0)
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(Constants.SHARED_FILENAME,Context.MODE_PRIVATE)
+        muted = sharedPreferences.getInt(Constants.PROPERTY_MUTED, 0)
 
     }
 
@@ -99,13 +101,13 @@ class MainActivity : Immersive() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putInt("mutedCond", muted)
+        outState.putInt(Constants.PROPERTY_MUTED, muted)
 
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        muted = (savedInstanceState.getInt("mutedCond"))
+        muted = (savedInstanceState.getInt(Constants.PROPERTY_MUTED))
     }
 
 

@@ -13,8 +13,8 @@ import kotlinx.android.synthetic.main.level_card.view.*
 class AdapterLevel(val arrayList: ArrayList<Question>, val mContext: Context) :
     RecyclerView.Adapter<AdapterLevel.ViewHolder>() {
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        fun bindItems(question: Question){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bindItems(question: Question) {
             itemView.problemName.text = question.topicName
         }
     }
@@ -31,10 +31,12 @@ class AdapterLevel(val arrayList: ArrayList<Question>, val mContext: Context) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(arrayList[position])
-        holder.itemView.setOnClickListener{
-            val intent = Intent(mContext, PlayAct::class.java)
-            intent.putExtra("openLevel", position)
-            mContext.startActivity(intent)
+        holder.itemView.setOnClickListener {
+            if (arrayList[position].questionStat) {
+                val intent = Intent(mContext, PlayAct::class.java)
+                intent.putExtra("openLevel", position)
+                mContext.startActivity(intent)
+            }
         }
     }
 

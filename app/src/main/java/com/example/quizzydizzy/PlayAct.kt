@@ -17,29 +17,27 @@ import android.widget.Button
 import android.widget.Toast
 import android.widget.Toolbar
 import com.example.quizzydizzy.questionList.Question
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_play.*
+import java.lang.reflect.Type
 
 class PlayAct : Immersive() {
 
 
     private var mCurrentPos: Int = 1
     private var mQuestionList: ArrayList<Question>? = null
-    private var counts: String? = null
+    private var counts: String = ""
     internal var mMediaPlayer: MediaPlayer? = null
     var muted: Int = 0
     var mFromLevel: Int = -1
-    var showView: Boolean =false
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
 
-
-
         mFromLevel = intent.getIntExtra("openLevel", mFromLevel)
-        mQuestionList = Constants.getQuestions()
         loadPreferences()
         setQuestion()
         val button1 = findViewById<Button>(R.id.one)
@@ -91,7 +89,11 @@ class PlayAct : Immersive() {
 
             val question = mQuestionList?.get(mCurrentPos - 1)
             if (question!!.correctAnswer.compareTo(answer_input.text.toString()) == 0) {
+                mQuestionList?.get(mCurrentPos)?.questionStat=true
+                savePreference()
+
                 Toast.makeText(this, "You're right", Toast.LENGTH_SHORT).show()
+
                 mCurrentPos++
                 answer_input.text = null
                 mMediaPlayer = MediaPlayer.create(this, R.raw.right_answer)
@@ -134,7 +136,8 @@ class PlayAct : Immersive() {
 
 
     fun goBack(v: View?){
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, LevelAct::class.java)
+        savePreference()
         startActivity(intent)
         finish()
     }
@@ -148,7 +151,9 @@ class PlayAct : Immersive() {
 
     private fun setQuestion() {
         val question = mQuestionList!![mCurrentPos - 1]
-        question_image.text = question!!.question
+        if(question.questionStat) {
+            question_image.text = question!!.question
+        }
 
     }
 
@@ -156,23 +161,25 @@ class PlayAct : Immersive() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         mCurrentPos = (savedInstanceState.getInt("CurrentPosition"))
-        muted = (savedInstanceState.getInt("mutedCond"))
+        muted = (savedInstanceState.getInt(Constants.PROPERTY_MUTED))
     }
 
     override fun onBackPressed() {
         val intent = Intent(this, MainActivity::class.java)
+        savePreference()
         startActivity(intent)
         overridePendingTransition(0, 0)
         finish()
-        savePreference()
         super.onBackPressed()
     }
 
     private fun savePreference() {
-        val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
-        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        var sharedPreferences: SharedPreferences = getSharedPreferences(Constants.SHARED_FILENAME,Context.MODE_PRIVATE)
+        var editor: SharedPreferences.Editor = sharedPreferences.edit()
+        var json:String=Gson().toJson(mQuestionList)
         editor.putInt(counts, mCurrentPos)
-        editor.putInt("mutedCond", muted)
+        editor.putInt(Constants.PROPERTY_MUTED, muted)
+        editor.putString("MyObject", json)
         editor.apply()
     }
 
@@ -193,15 +200,29 @@ class PlayAct : Immersive() {
     }
 
     private fun loadPreferences() {
-        val sharedPreferences: SharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
-        if (mFromLevel == -1) {
-            mCurrentPos = sharedPreferences.getInt(counts, 1)
+//        var sharedPreferences: SharedPreferences = getSharedPreferences(Constants.SHARED_FILENAME,Context.MODE_PRIVATE)
+//        var json: String? = sharedPreferences.getString("MyObject", null)
+        var json: String? = DataStore.getProperty(this, Constants.SHARED_FILENAME, "MyObject", "")
+
+        var type = object : TypeToken<ArrayList<Question>>(){}.type
+        mQuestionList = Gson().fromJson<ArrayList<Question>>(json,type)
+            mQuestionList =mQuestionList ?: (Constants.getQuestions())
+
+
+        mCurrentPos = if (mFromLevel == -1) {
+//            sharedPreferences.getInt(counts, 1)
+            DataStore.getProperty(this, Constants.SHARED_FILENAME, Constants.PROPERTY_COUNT, 1)
+
         } else {
-            mCurrentPos = mFromLevel + 1
+            mFromLevel + 1
         }
         //mCurrentPos = sharedPreferences.getInt(counts, 1)
-        muted = sharedPreferences.getInt("mutedCond", muted)
-        muted = intent.getIntExtra("mutedCond", muted)
+
+//        muted = sharedPreferences.getInt("mutedCond", muted)
+
+        muted= DataStore.getProperty(this, Constants.SHARED_FILENAME, Constants.PROPERTY_MUTED, muted)
+
+        muted = intent.getIntExtra(Constants.PROPERTY_MUTED, muted)
 
     }
 
