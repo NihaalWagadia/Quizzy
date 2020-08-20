@@ -6,5 +6,6 @@ data class Question (
     val correctAnswer: String,
     val topicName : String,
     val topicSolution: String,
-    var questionStat : Boolean
+    var questionStat : Boolean,
+    val challengeNumber:String
 )

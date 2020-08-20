@@ -83,6 +83,7 @@ class MainActivity : Immersive() {
     }
 
     override fun onBackPressed() {
+        
         savePreference()
         super.onBackPressed()
 

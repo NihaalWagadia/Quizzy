@@ -61,7 +61,11 @@ class LevelAct : Immersive() {
     }
 
     override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
         savePreference()
+        startActivity(intent)
+        overridePendingTransition(0, 0)
+        finish()
         super.onBackPressed()
 
     }

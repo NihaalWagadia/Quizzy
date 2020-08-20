@@ -34,4 +34,5 @@
     <string name="tier">Tier</string>
     <string name="levelInLevel">LEVEL</string>
     <string name="question">Question</string>
+    <string name="input">Input</string>
 </resources>

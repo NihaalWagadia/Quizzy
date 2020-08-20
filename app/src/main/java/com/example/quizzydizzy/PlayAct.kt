@@ -89,7 +89,7 @@ class PlayAct : Immersive() {
 
             val question = mQuestionList?.get(mCurrentPos - 1)
             if (question!!.correctAnswer.compareTo(answer_input.text.toString()) == 0) {
-                mQuestionList?.get(mCurrentPos)?.questionStat=true
+                mQuestionList?.get(mCurrentPos)?.questionStat = true
                 savePreference()
 
                 Toast.makeText(this, "You're right", Toast.LENGTH_SHORT).show()
@@ -124,18 +124,51 @@ class PlayAct : Immersive() {
 
     }
 
-    fun answerHint(v: View?){
+    fun answerHint(v: View?) {
         card_for_solution.visibility = View.VISIBLE
         val question = mQuestionList!![mCurrentPos - 1]
-            sol.text= question!!.topicSolution
+        sol.text = question!!.topicSolution
+//        action_bar_relat.visibility = View.INVISIBLE
+//        num_pad_view.visibility = View.INVISIBLE
+        play_relate.alpha = 0.5f
+
+        one.isClickable = false
+        two.isClickable = false
+        three.isClickable = false
+        four.isClickable = false
+        five.isClickable = false
+        six.isClickable = false
+        seven.isClickable = false
+        eight.isClickable = false
+        nine.isClickable = false
+        zero.isClickable = false
+        enter.isClickable = false
+        clear.isClickable = false
+        go_back.isClickable = false
+
     }
 
-    fun closeCard(v:View?){
+    fun closeCard(v: View?) {
         card_for_solution.visibility = View.GONE
+        play_relate.alpha = 1.0f
+        one.isClickable = true
+        two.isClickable = true
+        three.isClickable = true
+        four.isClickable = true
+        five.isClickable = true
+        six.isClickable = true
+        seven.isClickable = true
+        eight.isClickable = true
+        nine.isClickable = true
+        zero.isClickable = true
+        enter.isClickable = true
+        clear.isClickable = true
+        go_back.isClickable = true
+
     }
 
 
-    fun goBack(v: View?){
+    fun goBack(v: View?) {
         val intent = Intent(this, LevelAct::class.java)
         savePreference()
         startActivity(intent)
@@ -151,8 +184,11 @@ class PlayAct : Immersive() {
 
     private fun setQuestion() {
         val question = mQuestionList!![mCurrentPos - 1]
-        if(question.questionStat) {
+        if (question.questionStat) {
             question_image.text = question!!.question
+            level_number.text = question!!.challengeNumber
+            Log.d("Challenge", question!!.challengeNumber)
+
         }
 
     }
@@ -174,10 +210,11 @@ class PlayAct : Immersive() {
     }
 
     private fun savePreference() {
-        var sharedPreferences: SharedPreferences = getSharedPreferences(Constants.SHARED_FILENAME,Context.MODE_PRIVATE)
+        var sharedPreferences: SharedPreferences =
+            getSharedPreferences(Constants.SHARED_FILENAME, Context.MODE_PRIVATE)
         var editor: SharedPreferences.Editor = sharedPreferences.edit()
-        var json:String=Gson().toJson(mQuestionList)
-        editor.putInt(counts, mCurrentPos)
+        var json: String = Gson().toJson(mQuestionList)
+        editor.putInt(Constants.PROPERTY_COUNT, mCurrentPos)
         editor.putInt(Constants.PROPERTY_MUTED, muted)
         editor.putString("MyObject", json)
         editor.apply()
@@ -204,9 +241,9 @@ class PlayAct : Immersive() {
 //        var json: String? = sharedPreferences.getString("MyObject", null)
         var json: String? = DataStore.getProperty(this, Constants.SHARED_FILENAME, "MyObject", "")
 
-        var type = object : TypeToken<ArrayList<Question>>(){}.type
-        mQuestionList = Gson().fromJson<ArrayList<Question>>(json,type)
-            mQuestionList =mQuestionList ?: (Constants.getQuestions())
+        var type = object : TypeToken<ArrayList<Question>>() {}.type
+        mQuestionList = Gson().fromJson<ArrayList<Question>>(json, type)
+        mQuestionList = mQuestionList ?: (Constants.getQuestions())
 
 
         mCurrentPos = if (mFromLevel == -1) {
@@ -220,7 +257,8 @@ class PlayAct : Immersive() {
 
 //        muted = sharedPreferences.getInt("mutedCond", muted)
 
-        muted= DataStore.getProperty(this, Constants.SHARED_FILENAME, Constants.PROPERTY_MUTED, muted)
+        muted =
+            DataStore.getProperty(this, Constants.SHARED_FILENAME, Constants.PROPERTY_MUTED, muted)
 
         muted = intent.getIntExtra(Constants.PROPERTY_MUTED, muted)
 
