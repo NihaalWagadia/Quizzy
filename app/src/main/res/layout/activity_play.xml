@@ -52,7 +52,8 @@
                     android:layout_gravity="center_vertical"
                     android:text="@string/levelInLevel"
                     android:textSize="30sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="@font/dance"/>
 
             </RelativeLayout>
 
@@ -102,7 +103,7 @@
                     app:cardCornerRadius="50dp"
                     android:elevation="50dp"
                     android:visibility="gone"
-                    app:cardBackgroundColor="#757575">
+                    app:cardBackgroundColor="#2B2B2B">
 
 
                     <TextView

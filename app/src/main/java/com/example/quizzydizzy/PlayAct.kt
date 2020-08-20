@@ -130,7 +130,7 @@ class PlayAct : Immersive() {
         sol.text = question!!.topicSolution
 //        action_bar_relat.visibility = View.INVISIBLE
 //        num_pad_view.visibility = View.INVISIBLE
-        play_relate.alpha = 0.5f
+//        play_relate.alpha = 0.7f
 
         one.isClickable = false
         two.isClickable = false
@@ -150,7 +150,7 @@ class PlayAct : Immersive() {
 
     fun closeCard(v: View?) {
         card_for_solution.visibility = View.GONE
-        play_relate.alpha = 1.0f
+//        play_relate.alpha = 1.0f
         one.isClickable = true
         two.isClickable = true
         three.isClickable = true

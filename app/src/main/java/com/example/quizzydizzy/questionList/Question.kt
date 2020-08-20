@@ -1,5 +1,7 @@
 package com.example.quizzydizzy.questionList
 
+import android.media.Image
+
 data class Question (
     val id: Int,
     val question: String,
@@ -7,5 +9,6 @@ data class Question (
     val topicName : String,
     val topicSolution: String,
     var questionStat : Boolean,
-    val challengeNumber:String
+    val challengeNumber:String,
+    val lock_image: Int
 )
