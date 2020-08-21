@@ -127,11 +127,11 @@ class PlayAct : Immersive() {
     fun answerHint(v: View?) {
         card_for_solution.visibility = View.VISIBLE
         val question = mQuestionList!![mCurrentPos - 1]
-        sol.text = question!!.topicSolution
-//        action_bar_relat.visibility = View.INVISIBLE
-//        num_pad_view.visibility = View.INVISIBLE
-//        play_relate.alpha = 0.7f
+        sol.text = getString(question!!.topicSolution)
+        disableClicks()
+    }
 
+    private fun disableClicks(){
         one.isClickable = false
         two.isClickable = false
         three.isClickable = false
@@ -150,7 +150,11 @@ class PlayAct : Immersive() {
 
     fun closeCard(v: View?) {
         card_for_solution.visibility = View.GONE
-//        play_relate.alpha = 1.0f
+        enableClicks()
+
+    }
+
+    private fun enableClicks(){
         one.isClickable = true
         two.isClickable = true
         three.isClickable = true
@@ -164,7 +168,6 @@ class PlayAct : Immersive() {
         enter.isClickable = true
         clear.isClickable = true
         go_back.isClickable = true
-
     }
 
 

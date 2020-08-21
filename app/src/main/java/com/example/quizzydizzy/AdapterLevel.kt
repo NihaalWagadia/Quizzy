@@ -19,10 +19,12 @@ class AdapterLevel(val arrayList: ArrayList<Question>, val mContext: Context) :
             if(!question.questionStat) {
                 itemView.problemName.text = question.challengeNumber
                 itemView.locking_question.setImageResource(question.lock_image)
+                itemView.alpha = 0.5f
             }
             else{
                 itemView.problemName.text = question.challengeNumber
                 itemView.locking_question.setImageResource(android.R.color.transparent)
+                itemView.alpha = 1.0f
 
             }
         }
