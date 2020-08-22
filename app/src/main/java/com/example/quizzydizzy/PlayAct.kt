@@ -16,6 +16,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import android.widget.Toolbar
+import androidx.appcompat.widget.ViewUtils
 import com.example.quizzydizzy.questionList.Question
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -89,18 +90,19 @@ class PlayAct : Immersive() {
 
             val question = mQuestionList?.get(mCurrentPos - 1)
             if (question!!.correctAnswer.compareTo(answer_input.text.toString()) == 0) {
+                wrong_id.visibility = View.GONE
                 mQuestionList?.get(mCurrentPos)?.questionStat = true
-                savePreference()
-
-                Toast.makeText(this, "You're right", Toast.LENGTH_SHORT).show()
-
-                mCurrentPos++
-                answer_input.text = null
                 mMediaPlayer = MediaPlayer.create(this, R.raw.right_answer)
-
                 if (muted == 0) {
                     mMediaPlayer?.start()
                 }
+                savePreference()
+                //Toast.makeText(this, "You're right", Toast.LENGTH_SHORT).show()
+
+                mCurrentPos++
+                answer_input.text = null
+
+
                 when {
                     mCurrentPos <= mQuestionList!!.size -> {
                         setQuestion()
@@ -113,7 +115,8 @@ class PlayAct : Immersive() {
                     }
                 }
             } else {
-                Toast.makeText(this, "Wrong answer", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, "Wrong answer", Toast.LENGTH_SHORT).show()
+                wrong_id.visibility = View.VISIBLE
             }
 
             if (mCurrentPos == mQuestionList!!.size) {
@@ -123,6 +126,8 @@ class PlayAct : Immersive() {
         }
 
     }
+
+
 
     fun answerHint(v: View?) {
         card_for_solution.visibility = View.VISIBLE

@@ -80,8 +80,10 @@
                         android:background="#BDBDBD"
                         android:gravity="center_horizontal|center"
                         android:text="@string/question"
-                        android:textSize="50sp"
-                        android:textStyle="bold" />
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/pangolin"
+                        android:textColor="#090707"/>
 
                     <ImageView
                         android:id="@+id/answer_hint"
@@ -91,6 +93,26 @@
                         android:contentDescription="@string/hint_icon"
                         android:onClick="answerHint"
                         android:src="@drawable/hint" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:visibility="gone"
+                        android:textSize="30sp"
+                        android:text="@string/you_re_correct"
+                        android:fontFamily="@font/dance"
+                        android:id="@+id/correct_id"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:visibility="gone"
+                        android:textSize="30sp"
+                        android:text="@string/try_again"
+                        android:fontFamily="@font/dance"
+                        android:id="@+id/wrong_id"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -102,7 +124,7 @@
                     android:layout_centerVertical="true"
                     app:cardCornerRadius="50dp"
                     android:elevation="50dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     app:cardBackgroundColor="#2B2B2B">
 
 
@@ -113,6 +135,7 @@
                         android:layout_gravity="center"
                         android:textColor="#F8F7F7"
                         android:gravity="center_vertical|center"
+                        android:fontFamily="@font/pangolin"
                         android:textSize="18sp" />
 
                     <TextView

@@ -298,16 +298,16 @@
         What is the base of a rhombus, if its area is 40 square units and the height is 8 units?
     </string>
     <string name="question_7">
-        7hard There are 500 coffins and 500 men who need them. The undertaker asks the first man to go to every coffin and open them. Then he tells the second man to go to every one and close it. The third one goes to every third coffin and so on. How many are open?
+        There are 500 coffins and 500 men who need them. The undertaker asks the first man to go to every coffin and open them. Then he tells the second man to go to every one and close it. The third one goes to every third coffin and so on. How many are open?
     </string>
     <string name="question_8">
-        123=0
-        4235=0
-        656=2
-        5390=2
-        8890=6
-        1001=2
-        19235=1
+        123=0\n
+        4235=0\n
+        656=2\n
+        5390=2\n
+        8890=6\n
+        1001=2\n
+        19235=1\n
         What is 123456789?
     </string>
     <string name="question_9">
@@ -321,7 +321,7 @@
             2 3 4 9 16 81 256
     </string>
     <string name="question_11">
-        Complete this sequence?
+        Complete this sequence?\n
             2 3 4 9 16 81 256
     </string>
     <string name="question_12">
@@ -374,9 +374,9 @@
         2, 7, 22, 67, 202, ?
     </string>
     <string name="question_28">
-        B 8
-      * B 3
-   =  6 4 4
+        B 8\n
+      * B 3\n
+   =  6 4 4\n
     </string>
     <string name="question_29">
         wait
@@ -391,9 +391,9 @@
         wait
     </string>
     <string name="question_33">
-        56   3  49  27  18
-        74  62  19   8  35
-        65  92   ?  34  81
+        56   3  49  27  18\n
+        74  62  19   8  35\n
+        65  92   ?  34  81\n
     </string>
     <string name="question_34">
         131 517 192 x
@@ -447,6 +447,8 @@
     <string name="question_50">
         wait
     </string>
+    <string name="you_re_correct">You\'re correct</string>
+    <string name="try_again">Try again</string>
 
 
 </resources>
