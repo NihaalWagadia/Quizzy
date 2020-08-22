@@ -188,7 +188,7 @@ class PlayAct : Immersive() {
     private fun setQuestion() {
         val question = mQuestionList!![mCurrentPos - 1]
         if (question.questionStat) {
-            question_image.text = question!!.question
+            question_image.text = getString(question!!.question)
             level_number.text = question!!.challengeNumber
             Log.d("Challenge", question!!.challengeNumber)
 

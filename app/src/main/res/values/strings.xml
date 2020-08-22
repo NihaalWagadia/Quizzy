@@ -43,28 +43,28 @@
         25
     </string>
     <string name="number_three">
-        >> 25: 40:: 10 : x ⇒ 25 *x = (10 * 40)
-        >> x= (36 *25 ) / 15 = 16
+        >> 25: 40:: 10 : x ⇒ 25 *x = (10 * 40)\n
+        x= (36 *25 ) / 15 = 16
     </string>
     <string name="number_four">
-        >> x2 + 4y2 - 4xy = 0
-        >> (x-2y)2 = 0
-        >> x-2y=0
-        >> x = 2y
-        >> x/y = 2/1.
-        >> x:y = 2:1.
+        >> x2 + 4y2 - 4xy = 0\n
+        (x-2y)2 = 0\n
+        x-2y=0\n
+        x = 2y\n
+        x/y = 2/1.\n
+        x:y = 2:1\n
     </string>
     <string name="number_five">
-        >> 6 + 13 + 17 + 21 + 23 = 80
-        >>Total units = 5
-        >>Hence, average = 80/5 = 16
+        >> 6 + 13 + 17 + 21 + 23 = 80\n
+        Total units = 5\n
+        Hence, average = 80/5 = 16
     </string>
     <string name="number_six">
-        >> Area = 40 square units
-        >> Height = 8 units
-        >> Area of rhombus = Base × Height
-        >> 40 = Base × 8
-        >> Base = 40/8 = 5 units
+        >> Area = 40 square units\n
+        Height = 8 units\n
+        Area of rhombus = Base × Height\n
+        40 = Base × 8\n
+        Base = 40/8 = 5 units\n
     </string>
     <string name="number_seven">
         wait
@@ -74,210 +74,379 @@
     </string>
 
     <string name="number_nine">
-        >>Looking at lines of numbers from the top
-        >>9×8 = 72; 72×8 = 576; 576×8 = 4608
-        >>0
+        >>Looking at lines of numbers\n
+        from the top\n
+        9×8 = 72; 72×8 = 576; 576×8 = 4608\n
+        Ans:0\n
     </string>
     <string name="number_ten">
-        >>Each number indicates its position in the grid.
-        >>55 indicates row 5 columns 5.
+        >>Each number indicates its position in the grid.\n
+        55 indicates row 5 columns 5.\n
+        Ans:55\n
     </string>
     <string name="number_eleven">
-        >>There are two sequences arranged alternately.
-        >>In each sequence the number is the square of the
-        previous number in that sequence.
-        >>6,561 is the square of 81.
+        >>There are two sequences arranged alternately.\n
+        In each sequence the number is the square of the\n
+        previous number in that sequence.\n
+        6561 is the square of 81.\n
     </string>
     <string name="number_twelfth">
-        >>(6 + 17) – (5 + 9)
-        >>9
+        >>(6 + 17) – (5 + 9)\n
+        Ans:9
     </string>
     <string name="number_13">
-        >>(1st row)x(2nd row)x(3rd row) = 4th row.
-        >>Let the missing number in the third column be x.
-        >>Then, 8x5xX = 320.
-        >>40X =320
-        >>X = 8.
+        >>(1st row)x(2nd row)x(3rd row) = 4th row.\n
+        Let the missing number in the third column be x.\n
+        Then, 8x5xX = 320.\n
+        40X =320\n
+        X = 8.\n
     </string>
     <string name="number_14">
-        >>In the first column, 12×6 = 72; 18÷6 = 3.
-        >>In the third column, 16×8 = 128; 32÷8 = 4.
-        >>In the second column, 14×8 = 112.
-        >>So, the missing number = 24÷8 = 3.
+        >>In the first column,12×6 = 72;18÷6 = 3\n
+        In the third column,16×8 = 128;32÷8 = 4\n
+        In the second column, 14×8 = 112.\n
+        So, the missing number = 24÷8 = 3.\n
     </string>
     <string name="number_15">
-        >>First column 11*11 -1*1=121-1=120
-        >>Second column 7*7-2*2=49-4=45
-        >>Third column 5*5-3*3=25-9=16
+        >>First column 11*11 -1*1=121-1=120\n
+        Second column 7*7-2*2=49-4=45\n
+        Third column 5*5-3*3=25-9=16\n
     </string>
     <string name="number_16">
-        >>(1st row*1st row)+(2nd row*2nd row)
-        >>+(3rd row*3rd row)=4th row
-        >>First column, 4*4+2*2+1*1=21
-        >>second column, 5*5+3*3+8*8=98
-        >>Third column, 6*6+7*7+3*3=94
+        >>(1st row*1st row)+(2nd row*2nd row)\n
+        +(3rd row*3rd row)=4th row\n
+        First column, 4*4+2*2+1*1=21\n
+        second column, 5*5+3*3+8*8=98\n
+        Third column, 6*6+7*7+3*3=94\n
     </string>
     <string name="number_17">
         >>The center number is the product of the top
-        two numbers divided by the bottom number
-        >>7
+        two numbers divided by the bottom number\n
+        Ans:7\n
     </string>
     <string name="number_18">
-        >>All the others are the same figure rotated
-        >>2
+        >>All the others are the same figure rotated\n
+        Ans:2\n
     </string>
     <string name="number_19">
-        >>Starting at 10 and moving three segments clockwise yields the series
-        10, 11, 14, 19, ?, 35.
-        >>The difference between
-        terms in the series is the sequence of odd numbers 1, 3, 5, 7, 9, 11.
-        >>26
+        >>Starting at 10 and moving three segments\n clockwise yields the series\n
+        10, 11, 14, 19, ?, 35.\n
+        The difference between
+        terms in the series is the sequence of odd numbers 1, 3, 5, 7, 9, 11.\n
+        Ans:26\n
     </string>
     <string name="number_20">
-        >>Add 1 + 5 + 3 = 9.
-        >>864 / 9 = 96
-        >>96 x 5 = 480.
+        >>Add 1 + 5 + 3 = 9.\n
+        864 / 9 = 96\n
+        96 x 5 = 480.\n
     </string>
     <string name="number_21">
-        >>The total of three numbers must be 48 × 3 = 144.
-        >>The total of two numbers must be 56 × 2 = 112.
-        >>Therefore, 144 – 112 = 32;
+        >>The total of three numbers must be 48×3 = 144\n
+        The total of two numbers must be 56 × 2 = 112.\n
+        Therefore, 144 – 112 = 32\n
     </string>
     <string name="number_22">
-        >>3527
-        >>In the others the sum of the first two numbers
-        is equal to the sum of the second numbers
-        >>For example 5+2 = 6+1.
+        >>Ans:3527\n
+        In the others the sum of the first two numbers\n
+        is equal to the sum of the second numbers\n
+        For example 5+2 = 6+1.\n
     </string>
     <string name="number_23">
-        >>888
-        >>The sequence progresses x3, +2.
+        >>Ans:888\n
+        The sequence progresses x3, +2.\n
     </string>
     <string name="number_24">
-        >>There are two alternative sequences : +14,-97.
-        >>57
+        >>There are two alternative sequences : +14,-97.\n
+        Ans:57\n
     </string>
     <string name="number_25">
-        >>There are two alternate sequence +3 and -4
-        >>11
+        >>There are two alternate sequence +3 and -4\n
+        Ans:11\n
     </string>
     <string name="number_26">
-        >>It is the sum of the two digits (9+8) in the quadrant directly opposite.
-        >>17
+        >>It is the sum of the two digits (9+8) in the quadrant directly opposite.\n
+        Ans:17\n
     </string>
     <string name="number_27">
-        >>X3 +1 at each stage
-        >>607
+        >>X3 +1 at each stage\n
+        Ans:607\n
     </string>
     <string name="number_28">
-        >>Let the numbers be 10B + 8 and 10B + 3.
-        >>The product of these numbers will be 644.
-        >>(10B + 8) (10B + 3) = 644
-        >>100B2 + 110B – 620 = 0
-        >>10B2 + 11B – 62 = 0
-        >>10B2 – 20B + 31B – 62 = 0
-        >>10B (B – 2) + 31 (B – 2) = 0
-        >>(B – 2) (10B + 31) = 0
-        >>B = 2  or B = – 3110
+        >>Let the numbers be 10B + 8 and 10B + 3.\n
+        The product of these numbers will be 644.\n
+        (10B + 8) (10B + 3) = 644\n
+        100B2 + 110B – 620 = 0\n
+        10B2 + 11B – 62 = 0\n
+        10B2 – 20B + 31B – 62 = 0\n
+        10B (B – 2) + 31 (B – 2) = 0\n
+        (B – 2) (10B + 31) = 0\n
+        B = 2  or B = – 3110\n
     </string>
     <string name="number_29">
-        >>The numbers in each circle total 100
-        >>13
+        >>The numbers in each circle total 100\n
+        Ans:13\n
     </string>
     <string name="number_30">
         >>Numbers are obtained by adding pairs of digits
-        i.e. with 571219: 5 + 7 = 12; 7 + 12 = 19.
-        >>To follow this same pattern 971613 would have to be 971623.
+        i.e. with 571219: 5 + 7 = 12; 7 + 12 = 19.\n
+        To follow this same pattern 971613 would have to be 971623.\n
     </string>
     <string name="number_31">
-        >>86.
-        >>Add five straight down
-        >>Add ten sideways
-        >>Add fifteen diagonally.
+        >>Ans:86.\n
+        Add five straight down\n
+        Add ten sideways\n
+        Add fifteen diagonally.\n
     </string>
     <string name="number_32">
-        >>16
-        >>Each number in the bottom rows is the sum of the
-        number above it and the previous number.
+        >>Ans:16\n
+        Each number in the bottom rows is the sum of the
+        number above it and the previous number.\n
     </string>
     <string name="number_33">
-        >>The numbers in each line contain the digits 1 – 9 once each only
-        >>7
+        >>The numbers in each line contain the digits 1 – 9 once each only\n
+        Ans:7
     </string>
     <string name="number_34">
-        >>Spaced correctly, the series becomes 13 15 17 19 2(1)
-        >>1
+        >>Spaced correctly, the series becomes 13 15 17 19 2(1)\n
+        Ans:1\n
     </string>
     <string name="number_35">
         >>When you look at the relationship of each set of top and bottom numbers
         you will see that 12 is 2 x 6, 24 is 3 x 8, 36 is 4 x 9,
-        45 is 5 x 9, 60 is 6 x 10, and 84 is 7 x 12.
-        >>12
+        45 is 5 x 9, 60 is 6 x 10, and 84 is 7 x 12.\n
+        Ans:12\n
     </string>
     <string name="number_36">
-        >>The missing number is 4. The sum of three numbers in each box is 12
-        >>12
+        >>The missing number is 4. The sum of three numbers in each box is 12\n
+        Ans:12\n
     </string>
     <string name="number_37">
-        >>The number formed at the top is half of the number formed at the bottom
-        >>i.e. 358 x 2 = 716
-        >>1
+        >>The number formed at the top is half of the number formed at the bottom i.e. 358 x 2 = 716\n
+        Ans:1\n
     </string>
     <string name="number_38">
-        >>The missing number is 6.
-        >>The two numbers opposite each other always total 21.
-        >>15 + 6 = 21. The other numbers: 17 + 4 = 21
-        13 + 8 = 21, 11 + 10 = 21
+        >>The missing number is 6.\n
+        The two numbers opposite each other always total 21.\n
+        15 + 6 = 21. The other numbers: 17 + 4 = 21\n
+        13 + 8 = 21, 11 + 10 = 21\n
     </string>
     <string name="number_39">
-        >>The odd one out is 78. It is 39 x 2.
-        The other numbers are all evenly divisible by 37.
+        >>The odd one out is 78. It is 39 x 2.\n
+        The other numbers are all evenly divisible by 37.\n
     </string>
     <string name="number_40">
-        >>(8+7)*5=75
-        >>5
+        >>(8+7)*5=75\n
+        Ans:5\n
     </string>
     <string name="number_41">
-        >>The sequence progresses –7, –14, –21, –28
-        >>30
+        >>The sequence progresses –7, –14, –21, –28\n
+        Ans:30\n
     </string>
     <string name="number_42">
-        >>Combined age in 15 years = 107.
-        >>4 × 15 = 60, therefore combined age now is 107 – 60 = 47
-        >>In 6 years time, therefore, combined age will be
-        >>47 + 24 (4 × 6) = 71.
+        >>Combined age in 15 years = 107.\n
+        4 × 15 = 60, therefore combined age now is 107 – 60 = 47\n
+        In 6 years time, therefore, combined age will be 47 + 24 (4 × 6) = 71.
     </string>
     <string name="number_43">
-        >>17
-        >>8 + 9 = 17; 7 + 6 = 13.
+        >> Ans:17\n
+        8 + 9 = 17; 7 + 6 = 13.
     </string>
     <string name="number_44">
-        >>1417
-        >>42/3 = 14, 51/3 = 17
+        >> Ans:1417\n
+        42/3 = 14, 51/3 = 17
     </string>
     <string name="number_45">
-        >>150
-        >>The sequence progresses +1, x2, +3, x4, +5, x6, +7
+        >> Ans:150\n
+        The sequence progresses +1, x2, +3, x4, +5, x6, +7
     </string>
     <string name="number_46">
-        >>There are two alternate sequences: +3 and -4
-        >>11
+        >>There are two alternate sequences: +3 and -4\n
+        Ans:11\n
     </string>
     <string name="number_47">
-        >>Multiply the bottom two numbers then take the square root,
-        >>i.e. 1×4 = 4 and √4 = 2.
-        >>1
+        >>Multiply the bottom two numbers then take the square root, i.e. 1×4 = 4 and √4 = 2.\n
+        Ans:1
     </string>
     <string name="number_48">
-        >>8
-        >>Each number in the segment at the bottom is the
-        sum of the four numbers in the sections either side.
-        >>Thus 8 + 3 + 4 + 3 = 18.
+        >> Ans:8\n
+        Each number in the segment at the bottom is the sum of the four numbers in the sections either side.\n
+        Thus 8 + 3 + 4 + 3 = 18.
 
     </string>
     <string name="number_49">
-        >>Each number is the sum of the last two digits of the previous number,
-        preceded by the remaining numbers in reverse.34826
+        >>Each number is the sum of the last two digits of the previous number, preceded by the remaining numbers in reverse.34826
     </string>
-    <string name="number_50"></string>
+    <string name="number_50">wait</string>
+    <string name="question_1">
+        1+4+9+?
+    </string>
+    <string name="question_2">
+        8x+5y=9
+        3x+2y=4
+        Find x?
+    </string>
+    <string name="question_3">
+        If 40 men can do a piece of word in 10 days, in how many days will 25 men do it?
+    </string>
+    <string name="question_4">
+        x2+y2 = 4xy,then x:y = ?
+    </string>
+    <string name="question_5">
+        The average of 6, 13, 17, 21, 23
+    </string>
+    <string name="question_6">
+        What is the base of a rhombus, if its area is 40 square units and the height is 8 units?
+    </string>
+    <string name="question_7">
+        7hard There are 500 coffins and 500 men who need them. The undertaker asks the first man to go to every coffin and open them. Then he tells the second man to go to every one and close it. The third one goes to every third coffin and so on. How many are open?
+    </string>
+    <string name="question_8">
+        123=0
+        4235=0
+        656=2
+        5390=2
+        8890=6
+        1001=2
+        19235=1
+        What is 123456789?
+    </string>
+    <string name="question_9">
+         9\n
+        7 2\n
+       5 7 6\n
+      4 6 ? 8\n
+    </string>
+    <string name="question_10">
+        Complete this sequence?cancel
+            2 3 4 9 16 81 256
+    </string>
+    <string name="question_11">
+        Complete this sequence?
+            2 3 4 9 16 81 256
+    </string>
+    <string name="question_12">
+        wait
+    </string>
+    <string name="question_13">
+        wait
+    </string>
+    <string name="question_14">
+        wait
+    </string>
+    <string name="question_15">
+        wait
+    </string>
+    <string name="question_16">
+        wait
+    </string>
+    <string name="question_17">
+        wait
+    </string>
+    <string name="question_18">
+        wait
+    </string>
+    <string name="question_19">
+        wait
+    </string>
+    <string name="question_20">
+        A company produces 864 white, black and red motor vehicles per week in the ratio 1 : 5 : 3. How many black cars does the company produce per week?
+    </string>
+    <string name="question_21">
+        The average of three numbers is 48. The average of two of these numbers is 56. What is the third number?
+    </string>
+    <string name="question_22">
+        Find odd one out:
+        9678 4572 5261 5133 3527 6895 7768
+    </string>
+    <string name="question_23">
+        10, 30, 32, 96, 98, 294, 296, ?
+    </string>
+    <string name="question_24">
+        1, 101, 15, 4, 29, -93, 43, -190, ?
+    </string>
+    <string name="question_25">
+        16, 23, 19, 19, 22, 15, 25, ?
+    </string>
+    <string name="question_26">
+        wait
+    </string>
+    <string name="question_27">
+        2, 7, 22, 67, 202, ?
+    </string>
+    <string name="question_28">
+        B 8
+      * B 3
+   =  6 4 4
+    </string>
+    <string name="question_29">
+        wait
+    </string>
+    <string name="question_30">
+        571219, 461016, 831114, 461016, 971613, 781523
+    </string>
+    <string name="question_31">
+        wait
+    </string>
+    <string name="question_32">
+        wait
+    </string>
+    <string name="question_33">
+        56   3  49  27  18
+        74  62  19   8  35
+        65  92   ?  34  81
+    </string>
+    <string name="question_34">
+        131 517 192 x
+    </string>
+    <string name="question_35">
+        wait
+    </string>
+    <string name="question_36">
+        wait
+    </string>
+    <string name="question_37">
+        wait
+    </string>
+    <string name="question_38">
+        wait
+    </string>
+    <string name="question_39">
+        wait
+    </string>
+    <string name="question_40">
+        wait
+    </string>
+    <string name="question_41">
+        100, 93, 79, 58, ?
+    </string>
+    <string name="question_42">
+        In 15 year’s time the combined age of my four brothers will be 107. What will it be in six year’s time?
+    </string>
+    <string name="question_43">
+        wait
+    </string>
+    <string name="question_44">
+        wait
+    </string>
+    <string name="question_45">
+        0, 1, 2, 5, 20, 25, ?
+    </string>
+    <string name="question_46">
+        16, 23, 19, 19, 22, 15, 25, ?
+    </string>
+    <string name="question_47">
+        6       4       2
+       3 12    2 8     ? 4
+    </string>
+    <string name="question_48">
+        wait
+    </string>
+    <string name="question_49">
+        348269, 284315, ****, 8438, 4811, 842, 86
+    </string>
+    <string name="question_50">
+        wait
+    </string>
+
+
 </resources>
