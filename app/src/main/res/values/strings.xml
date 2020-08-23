@@ -449,6 +449,8 @@
     </string>
     <string name="you_re_correct">You\'re correct</string>
     <string name="try_again">Try again</string>
+    <string name="go_to_main_menu">Go to Main Menu</string>
+    <string name="congratulations_finals">Congratulations!!!</string>
 
 
 </resources>

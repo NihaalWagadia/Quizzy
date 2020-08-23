@@ -6,26 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".CompletionActivity">
 
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:id="@+id/viewKonfetti"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
     <TextView
         android:id="@+id/congrats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center|center_horizontal"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="308dp"
-        android:text="@string/congratulations_you_have_mastered"
-        tools:ignore="MissingConstraints" />
+        android:text="@string/congratulations_finals"
+        app:layout_constraintBottom_toBottomOf="@+id/viewKonfetti"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/pangolin"
+        tools:layout_editor_absoluteX="33dp" />
 
     <Button
-        android:id="@+id/play_again"
+        android:id="@+id/go_to_main_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/play_again"
+        android:text="@string/go_to_main_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/congrats"
         tools:ignore="MissingConstraints"
+        android:textStyle="bold"
+        android:fontFamily="@font/pangolin"
+        android:textSize="30sp"
+        android:background="@android:color/transparent"
         android:onClick="playAgain"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,12 +40,11 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
     private lateinit var mRewardedVideoAd: RewardedVideoAd
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
 
-        MobileAds.initialize(this)
+        MobileAds.initialize(this@PlayAct)
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
         mRewardedVideoAd.rewardedVideoAdListener = this
         loadRewardedVideoAd()
@@ -103,7 +102,10 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
             val question = mQuestionList?.get(mCurrentPos - 1)
             if (question!!.correctAnswer.compareTo(answer_input.text.toString()) == 0) {
                 wrong_id.visibility = View.GONE
-                mQuestionList?.get(mCurrentPos)?.questionStat = true
+                if (mCurrentPos != mQuestionList?.size) {
+                    mQuestionList?.get(mCurrentPos)?.questionStat = true
+                }
+
                 mMediaPlayer = MediaPlayer.create(this, R.raw.right_answer)
                 if (muted == 0) {
                     mMediaPlayer?.start()
@@ -118,14 +120,13 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
                         setQuestion()
                     }
                     else -> {
-                        //Toast.makeText(this, "You're done", Toast.LENGTH_SHORT).show()
+                        mCurrentPos -= 1
                         val intent = Intent(this, CompletionActivity::class.java)
                         startActivity(intent)
                         finish()
                     }
                 }
             } else {
-//                Toast.makeText(this, "Wrong answer", Toast.LENGTH_SHORT).show()
                 wrong_id.visibility = View.VISIBLE
             }
 
@@ -138,12 +139,16 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
     }
 
 
-    private fun loadRewardedVideoAd(){
-        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917",
-        AdRequest.Builder().build())
+    private fun loadRewardedVideoAd() {
+        mRewardedVideoAd.loadAd(
+            "ca-app-pub-3940256099942544/5224354917",
+            AdRequest.Builder().build()
+
+        )
     }
+
     fun answerHint(v: View?) {
-        if(mRewardedVideoAd.isLoaded){
+        if (mRewardedVideoAd.isLoaded) {
             mRewardedVideoAd.show()
         }
 
@@ -214,7 +219,6 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
 
     }
 
-
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         mCurrentPos = (savedInstanceState.getInt("CurrentPosition"))
@@ -250,37 +254,29 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
         savePreference()
         super.onDestroy()
 
+
     }
 
     override fun onPause() {
         savePreference()
         super.onPause()
+
     }
 
     private fun loadPreferences() {
-//        var sharedPreferences: SharedPreferences = getSharedPreferences(Constants.SHARED_FILENAME,Context.MODE_PRIVATE)
-//        var json: String? = sharedPreferences.getString("MyObject", null)
-        var json: String? = DataStore.getProperty(this, Constants.SHARED_FILENAME, "MyObject", "")
 
+        var json: String? = DataStore.getProperty(this, Constants.SHARED_FILENAME, "MyObject", "")
         var type = object : TypeToken<ArrayList<Question>>() {}.type
         mQuestionList = Gson().fromJson<ArrayList<Question>>(json, type)
         mQuestionList = mQuestionList ?: (Constants.getQuestions())
 
-
         mCurrentPos = if (mFromLevel == -1) {
-//            sharedPreferences.getInt(counts, 1)
             DataStore.getProperty(this, Constants.SHARED_FILENAME, Constants.PROPERTY_COUNT, 1)
 
         } else {
             mFromLevel + 1
         }
-        //mCurrentPos = sharedPreferences.getInt(counts, 1)
-
-//        muted = sharedPreferences.getInt("mutedCond", muted)
-
-        muted =
-            DataStore.getProperty(this, Constants.SHARED_FILENAME, Constants.PROPERTY_MUTED, muted)
-
+        muted = DataStore.getProperty(this, Constants.SHARED_FILENAME, Constants.PROPERTY_MUTED, muted)
         muted = intent.getIntExtra(Constants.PROPERTY_MUTED, muted)
 
     }
@@ -295,16 +291,16 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
     }
 
     override fun onRewardedVideoAdLoaded() {
-        
+
     }
 
 
     override fun onRewardedVideoAdOpened() {
-        TODO("Not yet implemented")
+
     }
 
     override fun onRewardedVideoCompleted() {
-        TODO("Not yet implemented")
+        loadRewardedVideoAd()
     }
 
     override fun onRewarded(p0: RewardItem?) {
@@ -315,11 +311,11 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
     }
 
     override fun onRewardedVideoStarted() {
-        TODO("Not yet implemented")
+
     }
 
     override fun onRewardedVideoAdFailedToLoad(p0: Int) {
-        TODO("Not yet implemented")
+        Toast.makeText(this, "FAILED LOAD", Toast.LENGTH_SHORT).show()
     }
 
 }
