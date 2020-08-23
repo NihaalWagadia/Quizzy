@@ -18,12 +18,17 @@ import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.widget.ViewUtils
 import com.example.quizzydizzy.questionList.Question
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.reward.RewardItem
+import com.google.android.gms.ads.reward.RewardedVideoAd
+import com.google.android.gms.ads.reward.RewardedVideoAdListener
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_play.*
 import java.lang.reflect.Type
 
-class PlayAct : Immersive() {
+class PlayAct : Immersive(), RewardedVideoAdListener {
 
 
     private var mCurrentPos: Int = 1
@@ -32,11 +37,18 @@ class PlayAct : Immersive() {
     internal var mMediaPlayer: MediaPlayer? = null
     var muted: Int = 0
     var mFromLevel: Int = -1
+    private lateinit var mRewardedVideoAd: RewardedVideoAd
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
+
+        MobileAds.initialize(this)
+        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
+        mRewardedVideoAd.rewardedVideoAdListener = this
+        loadRewardedVideoAd()
 
         mFromLevel = intent.getIntExtra("openLevel", mFromLevel)
         loadPreferences()
@@ -97,8 +109,6 @@ class PlayAct : Immersive() {
                     mMediaPlayer?.start()
                 }
                 savePreference()
-                //Toast.makeText(this, "You're right", Toast.LENGTH_SHORT).show()
-
                 mCurrentPos++
                 answer_input.text = null
 
@@ -128,15 +138,18 @@ class PlayAct : Immersive() {
     }
 
 
-
+    private fun loadRewardedVideoAd(){
+        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917",
+        AdRequest.Builder().build())
+    }
     fun answerHint(v: View?) {
-        card_for_solution.visibility = View.VISIBLE
-        val question = mQuestionList!![mCurrentPos - 1]
-        sol.text = getString(question!!.topicSolution)
-        disableClicks()
+        if(mRewardedVideoAd.isLoaded){
+            mRewardedVideoAd.show()
+        }
+
     }
 
-    private fun disableClicks(){
+    private fun disableClicks() {
         one.isClickable = false
         two.isClickable = false
         three.isClickable = false
@@ -159,7 +172,7 @@ class PlayAct : Immersive() {
 
     }
 
-    private fun enableClicks(){
+    private fun enableClicks() {
         one.isClickable = true
         two.isClickable = true
         three.isClickable = true
@@ -270,6 +283,43 @@ class PlayAct : Immersive() {
 
         muted = intent.getIntExtra(Constants.PROPERTY_MUTED, muted)
 
+    }
+
+    override fun onRewardedVideoAdClosed() {
+        loadRewardedVideoAd()
+
+    }
+
+    override fun onRewardedVideoAdLeftApplication() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRewardedVideoAdLoaded() {
+        
+    }
+
+
+    override fun onRewardedVideoAdOpened() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRewardedVideoCompleted() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRewarded(p0: RewardItem?) {
+        card_for_solution.visibility = View.VISIBLE
+        val question = mQuestionList!![mCurrentPos - 1]
+        sol.text = getString(question!!.topicSolution)
+        disableClicks()
+    }
+
+    override fun onRewardedVideoStarted() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRewardedVideoAdFailedToLoad(p0: Int) {
+        TODO("Not yet implemented")
     }
 
 }

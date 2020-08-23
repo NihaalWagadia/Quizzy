@@ -48,7 +48,7 @@ class MainActivity : Immersive() {
 
     fun clearData(v: View?) {
         val sharedPreferences: SharedPreferences =
-            getSharedPreferences("PlayAct", Context.MODE_PRIVATE)
+            this.getSharedPreferences(Constants.SHARED_FILENAME, Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.clear()
         editor.apply()

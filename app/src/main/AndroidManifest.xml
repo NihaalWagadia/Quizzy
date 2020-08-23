@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7070236366094920~5429052007"/>
         <activity android:name=".CompletionActivity" />
         <activity
             android:name=".PlayAct"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme"
-
             />
         <activity
             android:name=".LevelAct"
