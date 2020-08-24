@@ -276,7 +276,10 @@
     <string name="number_49">
         >>Each number is the sum of the last two digits of the previous number, preceded by the remaining numbers in reverse.34826
     </string>
-    <string name="number_50">wait</string>
+    <string name="number_50">
+        >>Ans:24\n
+        If you increase both the number of hens and the amount of time available four-fold, the number of eggs increases 16 times. 16 x 1.5 = 24.
+    </string>
     <string name="question_1">
         1+4+9+?
     </string>
@@ -445,12 +448,16 @@
         348269, 284315, ****, 8438, 4811, 842, 86
     </string>
     <string name="question_50">
-        wait
+        If a hen and a half lay an egg and a half in a day and a half, how many eggs will half a dozen hens lay in half a dozen days?
     </string>
     <string name="you_re_correct">You\'re correct</string>
     <string name="try_again">Try again</string>
-    <string name="go_to_main_menu">Go to Main Menu</string>
-    <string name="congratulations_finals">Congratulations!!!</string>
+    <string name="go_to_main_menu">Play Again</string>
+    <string name="congratulations_finals">Congratulations you have finished all the problems!!!</string>
+    <string name="your_progress_has_been_cleared">Your progress has been cleared</string>
+    <string name="SoundOff">Sound Off</string>
+    <string name="SoundOn">Sound On</string>
+    <string name="check_your_internet">Check Your internet</string>
 
 
 </resources>

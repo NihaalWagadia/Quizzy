@@ -7,8 +7,10 @@ import android.media.AudioManager
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.example.quizzydizzy.questionList.Question
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -37,21 +39,44 @@ class MainActivity : Immersive() {
 
     fun soundAdjust(v: View?) {
         muted = if (muted == 0) {
+            voice_status.text =getString(R.string.SoundOff)
             1
         } else {
+            voice_status.text =getString(R.string.SoundOn)
             0
         }
         savePreference()
+        object : CountDownTimer(1000, 1000){
+            override fun onFinish() {
+                voice_status.visibility = View.GONE
+            }
 
+            override fun onTick(p0: Long) {
+                voice_status.visibility = View.VISIBLE
+
+            }
+        }.start()
 
     }
 
     fun clearData(v: View?) {
+        object : CountDownTimer(2000, 1000){
+            override fun onFinish() {
+                restart_status.visibility = View.GONE
+            }
+
+            override fun onTick(p0: Long) {
+                restart_status.visibility = View.VISIBLE
+
+            }
+        }.start()
         val sharedPreferences: SharedPreferences =
             this.getSharedPreferences(Constants.SHARED_FILENAME, Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.clear()
         editor.apply()
+
+
     }
 
     private fun savePreference() {
