@@ -78,12 +78,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#BDBDBD"
+                        android:fontFamily="@font/pangolin"
                         android:gravity="center_horizontal|center"
-                        android:text="@string/question"
+                        android:text="@string/question_16"
+                        android:textColor="#090707"
                         android:textSize="30sp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/pangolin"
-                        android:textColor="#090707"/>
+                        />
 
                     <ImageView
                         android:id="@+id/answer_hint"
@@ -92,7 +93,10 @@
                         android:layout_gravity="center|top"
                         android:contentDescription="@string/hint_icon"
                         android:onClick="answerHint"
-                        android:src="@drawable/hint" />
+                        android:src="@drawable/hint"
+                        android:background="#BDBDBD"
+
+                        />
 
                     <TextView
                         android:id="@+id/internet_status"

@@ -36,11 +36,11 @@
     <string name="question">Question</string>
     <string name="input">Input</string>
     <string name="number_two">
-        >> On multiplying 8x+5y=9 by 2,
-        3x+2y=4 by 5 and subtracting,  we get x=-2
+        >> On multiplying 5x+10y=40 by 2,
+        and subtracting that equation by 10x+15y=20, we get y=16
     </string>
     <string name="number_one">
-        25
+        >>Next Square25
     </string>
     <string name="number_three">
         >> 25: 40:: 10 : x ⇒ 25 *x = (10 * 40)\n
@@ -52,7 +52,7 @@
         x-2y=0\n
         x = 2y\n
         x/y = 2/1.\n
-        x:y = 2:1\n
+        x = 2\n
     </string>
     <string name="number_five">
         >> 6 + 13 + 17 + 21 + 23 = 80\n
@@ -67,10 +67,11 @@
         Base = 40/8 = 5 units\n
     </string>
     <string name="number_seven">
-        wait
+        >>Ans:22
     </string>
     <string name="number_eight">
-        wait
+        >>You need to count the number of closed circles.\n
+        Ans:4
     </string>
 
     <string name="number_nine">
@@ -80,9 +81,8 @@
         Ans:0\n
     </string>
     <string name="number_ten">
-        >>Each number indicates its position in the grid.\n
-        55 indicates row 5 columns 5.\n
-        Ans:55\n
+        >>(100 x 2 = 200; 200 + 800 = 1000; 1000 – 23 = 977)\n
+        Ans:977\n
     </string>
     <string name="number_eleven">
         >>There are two sequences arranged alternately.\n
@@ -120,13 +120,12 @@
         Third column, 6*6+7*7+3*3=94\n
     </string>
     <string name="number_17">
-        >>The center number is the product of the top
-        two numbers divided by the bottom number\n
-        Ans:7\n
+        >>The numbers present represents the number of letters in the spelling of its corresponding number.\n
+        Ans:6\n
     </string>
     <string name="number_18">
-        >>All the others are the same figure rotated\n
-        Ans:2\n
+        >>Consider the first letter of the spelling of each digit, One+Nine+Eight= ONE, similarly Two+Eight+Nine= TEN\n
+        Ans:10
     </string>
     <string name="number_19">
         >>Starting at 10 and moving three segments\n clockwise yields the series\n
@@ -164,8 +163,7 @@
         Ans:11\n
     </string>
     <string name="number_26">
-        >>It is the sum of the two digits (9+8) in the quadrant directly opposite.\n
-        Ans:17\n
+        >>Answer: 70. 20 divided by 1/2 + 30 = 70
     </string>
     <string name="number_27">
         >>X3 +1 at each stage\n
@@ -192,10 +190,7 @@
         To follow this same pattern 971613 would have to be 971623.\n
     </string>
     <string name="number_31">
-        >>Ans:86.\n
-        Add five straight down\n
-        Add ten sideways\n
-        Add fifteen diagonally.\n
+        >>Ans:75
     </string>
     <string name="number_32">
         >>Ans:16\n
@@ -217,8 +212,8 @@
         Ans:12\n
     </string>
     <string name="number_36">
-        >>The missing number is 4. The sum of three numbers in each box is 12\n
-        Ans:12\n
+        >>In this series, 5 is added to the previous number; the number 70 is inserted as every third number.\n
+        Ans:70\n
     </string>
     <string name="number_37">
         >>The number formed at the top is half of the number formed at the bottom i.e. 358 x 2 = 716\n
@@ -235,8 +230,8 @@
         The other numbers are all evenly divisible by 37.\n
     </string>
     <string name="number_40">
-        >>(8+7)*5=75\n
-        Ans:5\n
+        >>Working from top to bottom, double each number and subtract 1, then 2, then 3 etc
+        Ans:39\n
     </string>
     <string name="number_41">
         >>The sequence progresses –7, –14, –21, –28\n
@@ -268,9 +263,8 @@
         Ans:1
     </string>
     <string name="number_48">
-        >> Ans:8\n
-        Each number in the segment at the bottom is the sum of the four numbers in the sections either side.\n
-        Thus 8 + 3 + 4 + 3 = 18.
+        >> Ans:40\n
+        	Moving from left to right, numbers increase by 2,3,4 and 5.
 
     </string>
     <string name="number_49">
@@ -284,15 +278,15 @@
         1+4+9+?
     </string>
     <string name="question_2">
-        8x+5y=9
-        3x+2y=4
-        Find x?
+        10x+15y=20
+        5x+10y=40
+        Find y?
     </string>
     <string name="question_3">
         If 40 men can do a piece of word in 10 days, in how many days will 25 men do it?
     </string>
     <string name="question_4">
-        x2+y2 = 4xy,then x:y = ?
+        x2+y2 = 4xy,then x = ?
     </string>
     <string name="question_5">
         The average of 6, 13, 17, 21, 23
@@ -320,36 +314,48 @@
       4 6 ? 8\n
     </string>
     <string name="question_10">
-        Complete this sequence?cancel
-            2 3 4 9 16 81 256
+        There are 100 pairs of dogs in a zoo. Two pairs of babies are born for every dog. Unfortunately, 23 of the dogs have not survived. How many dogs would be left in total?
     </string>
     <string name="question_11">
         Complete this sequence?\n
             2 3 4 9 16 81 256
     </string>
     <string name="question_12">
-        wait
+        &#160;9&#160;&#160;&#160;7&#160;&#160;&#160;&#160;&#160;&#160;15&#160;&#160;&#160;6&#160;&#160;&#160;&#160;&#160;&#160;6&#160;&#160;&#160;9
+        5&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;18&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;X\n
+        &#160;5&#160;&#160;&#160;8&#160;&#160;&#160;&#160;&#160;&#160;2&#160;&#160;&#160;11&#160;&#160;&#160;&#160;&#160;&#160;5&#160;&#160;&#160;17
     </string>
     <string name="question_13">
-        wait
+        6&#160;&#160;&#160;&#160;6&#160;&#160;&#160;&#160;8\n
+        5&#160;&#160;&#160;&#160;7&#160;&#160;&#160;&#160;5\n
+        4&#160;&#160;&#160;&#160;3&#160;&#160;&#160;&#160;X\n
+        120&#160;&#160;126&#160;&#160;320
     </string>
     <string name="question_14">
-        wait
+        18&#160;&#160;&#160;&#160;24&#160;&#160;&#160;&#160;32\n
+       12&#160;&#160;&#160;&#160;14&#160;&#160;&#160;&#160;16\n
+        3&#160;&#160;&#160;&#160;X&#160;&#160;&#160;&#160;4\n
+        72&#160;&#160;112&#160;&#160;128
     </string>
     <string name="question_15">
-        wait
+        &#160;1&#160;&#160;&#160;&#160;&#160;&#160;&#160;2&#160;&#160;&#160;&#160;&#160;&#160;3\n
+       11&#160;&#160;&#160;&#160;&#160;&#160;7&#160;&#160;&#160;&#160;&#160;&#160;5\n
+        120&#160;&#160;&#160;45&#160;&#160;&#160;X\n
     </string>
     <string name="question_16">
-        wait
+         4&#160;&#160;&#160;&#160;&#160;5&#160;&#160;&#160;&#160;&#160;6\n
+       2&#160;&#160;&#160;&#160;&#160;3&#160;&#160;&#160;&#160;&#160;7\n
+        1&#160;&#160;&#160;&#160;&#160;8&#160;&#160;&#160;&#160;&#160;3\n
+        21&#160;&#160;&#160;98&#160;&#160;&#160;X
     </string>
     <string name="question_17">
-        wait
+        1=3, 2=3, 3=5, 4=4, 5=4, 6=3, 7=5, 8=5, 9=4, 10=3, 11=? 12=?
     </string>
     <string name="question_18">
-        wait
+        Suppose 1+9+8=1, then what can be 2+8+9?
     </string>
     <string name="question_19">
-        wait
+        10, 11, 14, 19, ?, 35
     </string>
     <string name="question_20">
         A company produces 864 white, black and red motor vehicles per week in the ratio 1 : 5 : 3. How many black cars does the company produce per week?
@@ -359,7 +365,7 @@
     </string>
     <string name="question_22">
         Find odd one out:
-        9678 4572 5261 5133 3527 6895 7768
+        9678, 4572, 5261, 5133, 3527, 6895, 7768
     </string>
     <string name="question_23">
         10, 30, 32, 96, 98, 294, 296, ?
@@ -371,7 +377,7 @@
         16, 23, 19, 19, 22, 15, 25, ?
     </string>
     <string name="question_26">
-        wait
+        Divide 20 by half and add 30, what do you get?
     </string>
     <string name="question_27">
         2, 7, 22, 67, 202, ?
@@ -380,44 +386,63 @@
         B 8\n
       * B 3\n
    =  6 4 4\n
+        Find B?
     </string>
     <string name="question_29">
-        wait
+          52&#160;&#160;&#160;&#160;&#160;&#160;21&#160;&#160;&#160;&#160;&#160;&#160;27\n
+        34&#160;&#160;&#160;&#160;&#160;&#160;24&#160;&#160;&#160;&#160;&#160;&#160;22\n
+        16&#160;&#160;&#160;&#160;&#160;&#160;71&#160;&#160;&#160;&#160;&#160;&#160;X\n
     </string>
     <string name="question_30">
-        571219, 461016, 831114, 461016, 971613, 781523
+        571219, 461016, 831114, 461016, 971613, 781523\n
+        Find the odd one out?
     </string>
     <string name="question_31">
-        wait
+        I am a 2 digit number\n
+        I am not 64\n
+        I am between 60 and 80\n
+        My tens digit is 2 more than my ones digit\n
+        What number am I?
+
     </string>
     <string name="question_32">
-        wait
+        &#160;0&#160;&#160;7&#160;&#160;2&#160;&#160;4&#160;&#160;12&#160;&#160;6&#160;&#160;3\n
+                    &#160;&#160;&#160;&#160;&#160;7&#160;&#160;9&#160;&#160;6&#160;&#160;X&#160;&#160;18&#160;&#160;9
     </string>
     <string name="question_33">
-        56   3  49  27  18\n
-        74  62  19   8  35\n
-        65  92   ?  34  81\n
+        56&#160;&#160;&#160;&#160;3&#160;&#160;&#160;49&#160;&#160;27&#160;&#160;&#160;18\n
+        74&#160;&#160;&#160;62&#160;&#160;&#160;19&#160;&#160;&#160;8&#160;&#160;&#160;35\n
+        65&#160;&#160;&#160;92&#160;&#160;&#160;?&#160;&#160;&#160;&#160;34&#160;&#160;&#160;81\n
     </string>
     <string name="question_34">
-        131 517 192 x
-    </string>
-    <string name="question_35">
-        wait
+        131, 517, 192, X
     </string>
     <string name="question_36">
-        wait
+        70, 71, 76, X, 81, 86, 70, 91
+    </string>
+    <string name="question_35">
+        &#160;&#160;&#160;12&#160;&#160;&#160;&#160;&#160;24&#160;&#160;&#160;&#160;36&#160;&#160;&#160;&#160;45&#160;&#160;&#160;&#160;60&#160;&#160;&#160;&#160;84&#160;\n
+        6&#160;&#160;&#160;&#160;&#160;&#160;&#160;8&#160;&#160;&#160;&#160;&#160;&#160;9&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;9&#160;&#160;&#160;10&#160;&#160;&#160;&#160;&#160;X
     </string>
     <string name="question_37">
-        wait
+        496&#160;&#160;&#160;287&#160;&#160;&#160;358\n
+        992&#160;&#160;&#160;574&#160;&#160;&#160;7X6
     </string>
     <string name="question_38">
-        wait
+        13&#160;&#160;&#160;15&#160;&#160;&#160;11\n
+        8&#160;&#160;&#160;  X&#160;&#160;&#160;10
     </string>
     <string name="question_39">
-        wait
+        740, 185, 37, 407, 1369, 111, 78\n
+        Find odd one out?
     </string>
     <string name="question_40">
-        wait
+        3\n
+        5\n
+        8\n
+        13\n
+        22\n
+        X
     </string>
     <string name="question_41">
         100, 93, 79, 58, ?
@@ -426,10 +451,14 @@
         In 15 year’s time the combined age of my four brothers will be 107. What will it be in six year’s time?
     </string>
     <string name="question_43">
-        wait
+        5&#160;&#160; 3&#160;&#160;&#160;&#160;&#160;&#160;4&#160;&#160;5&#160;&#160;&#160;&#160;&#160;&#160;7&#160;&#160; 8\n
+          &#160;8&#160;&#160;&#160;12&#160;&#160;&#160;&#160;&#160;14&#160;&#160;6&#160;&#160;&#160;&#160;&#160;X&#160;&#160;13\n
+        7&#160;&#160; 5&#160;&#160;&#160;&#160;&#160;&#160;2&#160;&#160;9&#160;&#160;&#160;&#160;&#160;&#160;6&#160;&#160; 9
     </string>
     <string name="question_44">
-        wait
+        36&#160;&#160;&#160;1216&#160;&#160;&#160;48\n
+        24&#160;&#160;&#160;824 &#160;&#160;&#160;72\n
+        42&#160;&#160;&#160;&#160;&#160;X&#160;&#160;&#160;&#160;&#160;&#160;51
     </string>
     <string name="question_45">
         0, 1, 2, 5, 20, 25, ?
@@ -438,11 +467,11 @@
         16, 23, 19, 19, 22, 15, 25, ?
     </string>
     <string name="question_47">
-        6       4       2
-       3 12    2 8     ? 4
+        6&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;4&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2\n
+       3&#160;&#160;&#160;&#160;&#160;&#160;12&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2&#160;&#160;&#160;&#160;&#160;&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;X&#160;&#160;&#160;&#160;&#160;&#160;4
     </string>
     <string name="question_48">
-        wait
+        26, 28, 31, 35, X
     </string>
     <string name="question_49">
         348269, 284315, ****, 8438, 4811, 842, 86

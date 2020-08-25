@@ -44,9 +44,9 @@ class MainActivity : Immersive() {
         } else {
             voice_status.text =getString(R.string.SoundOn)
             0
+
         }
-        savePreference()
-        object : CountDownTimer(1000, 1000){
+        object : CountDownTimer(5000, 1000){
             override fun onFinish() {
                 voice_status.visibility = View.GONE
             }
@@ -56,6 +56,8 @@ class MainActivity : Immersive() {
 
             }
         }.start()
+        savePreference()
+
 
     }
 
