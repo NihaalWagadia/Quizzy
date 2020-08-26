@@ -25,6 +25,7 @@ import androidx.appcompat.widget.ViewUtils
 import com.example.quizzydizzy.questionList.Question
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
 import com.google.android.gms.ads.reward.RewardedVideoAdListener
@@ -33,6 +34,8 @@ import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_play.*
 import java.lang.reflect.Type
+import java.util.*
+import kotlin.collections.ArrayList
 
 class PlayAct : Immersive(), RewardedVideoAdListener {
 
@@ -51,7 +54,6 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
-
         MobileAds.initialize(this@PlayAct)
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
         mRewardedVideoAd.rewardedVideoAdListener = this
@@ -135,7 +137,16 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
                     }
                 }
             } else {
-                wrong_id.visibility = View.VISIBLE
+                object : CountDownTimer(3000, 1000){
+                    override fun onFinish() {
+                        wrong_id.visibility = View.GONE
+                    }
+
+                    override fun onTick(p0: Long) {
+                        wrong_id.visibility = View.VISIBLE
+
+                    }
+                }.start()
             }
 
             if (mCurrentPos == mQuestionList!!.size) {
@@ -149,7 +160,7 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
 
     private fun loadRewardedVideoAd() {
         mRewardedVideoAd.loadAd(
-            "ca-app-pub-3940256099942544/5224354917",
+            "ca-app-pub-7070236366094920/4019605717",
             AdRequest.Builder().build()
 
         )

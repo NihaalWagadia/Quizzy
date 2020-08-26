@@ -20,7 +20,7 @@
         android:paddingTop="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="20dp"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="25dp"
         android:id="@+id/play_card">
 
         <LinearLayout
@@ -80,7 +80,7 @@
                         android:background="#BDBDBD"
                         android:fontFamily="@font/pangolin"
                         android:gravity="center_horizontal|center"
-                        android:text="@string/question_16"
+                        android:text="@string/question"
                         android:textColor="#090707"
                         android:textSize="30sp"
                         android:textStyle="bold"
@@ -102,10 +102,11 @@
                         android:id="@+id/internet_status"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|center"
                         android:text="@string/check_your_internet"
                         android:visibility="gone"
                         android:textSize="30sp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_gravity="center|bottom"
                         android:fontFamily="@font/dance"/>
 
                     <TextView
@@ -160,7 +161,7 @@
                         android:gravity="center"
                         android:onClick="closeCard"
                         android:text="@string/cool"
-                        android:textColor="#090000"
+                        android:textColor="#F8F6F6"
                         android:textSize="25sp"
                         android:textStyle="italic|bold"/>
 
@@ -328,6 +329,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/circle"
                         android:gravity="center|center_horizontal"
+
                         android:text="@string/_6"
                         android:textSize="20sp"
                         android:textStyle="bold" />

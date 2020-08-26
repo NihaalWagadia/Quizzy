@@ -11,7 +11,7 @@ object Constants{
         val questionList = ArrayList<Question>()
 
         val question1 = Question(
-            1,R.string.question_1,"25", "ABC", (R.string.number_one),true, "Challenge 1", R.drawable.lock_question
+            1,R.string.question_1,"16", "ABC", (R.string.number_one),true, "Challenge 1", R.drawable.lock_question
         )
         questionList.add(question1)
 
@@ -56,7 +56,7 @@ object Constants{
         questionList.add(question9)
 
         val question10 = Question(
-            10,R.drawable.number_10,"977","ABC12",(R.string.number_ten),false,"Challenge 10", R.drawable.lock_question
+            10,R.string.question_10,"977","ABC12",(R.string.number_ten),false,"Challenge 10", R.drawable.lock_question
         )
         questionList.add(question10)
 

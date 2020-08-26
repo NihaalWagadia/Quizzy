@@ -46,7 +46,7 @@ class MainActivity : Immersive() {
             0
 
         }
-        object : CountDownTimer(5000, 1000){
+        object : CountDownTimer(3000, 1000){
             override fun onFinish() {
                 voice_status.visibility = View.GONE
             }

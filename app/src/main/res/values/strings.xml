@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">QuizzyDizzy</string>
+    <string name="app_name">EnigMath!</string>
     <string name="sound">Sound</string>
     <string name="level">Level</string>
     <string name="play">Play</string>
-    <string name="quizzy">Quizzy!</string>
+    <string name="quizzy">EnigMath!</string>
     <string name="restart">Restart</string>
     <string name="exit">Exit</string>
     <string name="my_play">My Play</string>
@@ -40,7 +40,7 @@
         and subtracting that equation by 10x+15y=20, we get y=16
     </string>
     <string name="number_one">
-        >>Next Square25
+        >>Next Square 16
     </string>
     <string name="number_three">
         >> 25: 40:: 10 : x ⇒ 25 *x = (10 * 40)\n
