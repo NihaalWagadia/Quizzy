@@ -1,4 +1,4 @@
-package com.example.quizzydizzy.questionList
+package com.puzz.quizzydizzy.questionList
 
 data class Question(
     val id: Int,

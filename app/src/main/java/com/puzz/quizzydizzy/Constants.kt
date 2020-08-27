@@ -1,6 +1,6 @@
-package com.example.quizzydizzy
+package com.puzz.quizzydizzy
 
-import com.example.quizzydizzy.questionList.Question
+import com.puzz.quizzydizzy.questionList.Question
 
 object Constants{
     val SHARED_FILENAME:String = "dataStore"
@@ -16,7 +16,7 @@ object Constants{
         questionList.add(question1)
 
         val question2 = Question(
-            2, R.string.question_2,"2","ABCD", (R.string.number_two),false,"Challenge 2", R.drawable.lock_question
+            2, R.string.question_2,"12","ABCD", (R.string.number_two),false,"Challenge 2", R.drawable.lock_question
         )
         questionList.add(question2)
 

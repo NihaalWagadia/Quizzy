@@ -1,15 +1,12 @@
-package com.example.quizzydizzy
+package com.puzz.quizzydizzy
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
-import android.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.quizzydizzy.questionList.Question
+import com.puzz.quizzydizzy.questionList.Question
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_level.*

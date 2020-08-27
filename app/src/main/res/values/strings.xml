@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">EnigMath!</string>
     <string name="sound">Sound</string>
-    <string name="level">Level</string>
+    <string name="level">&#160;Level&#160;</string>
     <string name="play">Play</string>
     <string name="quizzy">EnigMath!</string>
     <string name="restart">Restart</string>
@@ -286,7 +286,7 @@
         If 40 men can do a piece of word in 10 days, in how many days will 25 men do it?
     </string>
     <string name="question_4">
-        x2+y2 = 4xy,then x = ?
+        x*x+y*y = 4xy,then x = ?
     </string>
     <string name="question_5">
         The average of 6, 13, 17, 21, 23
@@ -349,7 +349,7 @@
         21&#160;&#160;&#160;98&#160;&#160;&#160;X
     </string>
     <string name="question_17">
-        1=3, 2=3, 3=5, 4=4, 5=4, 6=3, 7=5, 8=5, 9=4, 10=3, 11=? 12=?
+        1=3, 2=3, 3=5, 4=4, 5=4, 6=3, 7=5, 8=5, 9=4, 10=3, 11=?
     </string>
     <string name="question_18">
         Suppose 1+9+8=1, then what can be 2+8+9?
