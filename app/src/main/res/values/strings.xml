@@ -37,7 +37,7 @@
     <string name="input">Input</string>
     <string name="number_two">
         >> On multiplying 5x+10y=40 by 2,
-        and subtracting that equation by 10x+15y=20, we get y=16
+        and subtracting that equation by 10x+15y=20, we get y=12
     </string>
     <string name="number_one">
         >>Next Square 16
@@ -67,7 +67,8 @@
         Base = 40/8 = 5 units\n
     </string>
     <string name="number_seven">
-        >>Ans:22
+        >>Ans:22\n
+        All the coffins that are open at the end will be perfect squares
     </string>
     <string name="number_eight">
         >>You need to count the number of closed circles.\n
@@ -275,7 +276,7 @@
         If you increase both the number of hens and the amount of time available four-fold, the number of eggs increases 16 times. 16 x 1.5 = 24.
     </string>
     <string name="question_1">
-        1+4+9+?
+        1,4,9,?
     </string>
     <string name="question_2">
         10x+15y=20
@@ -286,7 +287,7 @@
         If 40 men can do a piece of word in 10 days, in how many days will 25 men do it?
     </string>
     <string name="question_4">
-        x2+y2 = 4xy,then x = ?
+        x*x+4(y*y) = 4xy,then x = ?
     </string>
     <string name="question_5">
         The average of 6, 13, 17, 21, 23

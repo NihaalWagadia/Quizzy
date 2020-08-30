@@ -1,14 +1,12 @@
-package com.example.quizzydizzy
+package com.puzz.quizzydizzy
 
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.getDrawable
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.quizzydizzy.questionList.Question
+import com.puzz.quizzydizzy.questionList.Question
 import kotlinx.android.synthetic.main.level_card.view.*
 
 class AdapterLevel(val arrayList: ArrayList<Question>, val mContext: Context) :

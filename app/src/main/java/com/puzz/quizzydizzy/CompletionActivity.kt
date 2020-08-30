@@ -1,17 +1,12 @@
-package com.example.quizzydizzy
+package com.puzz.quizzydizzy
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.graphics.Color
-import android.graphics.drawable.Drawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
 import kotlinx.android.synthetic.main.activity_completion.*
-import nl.dionsegijn.konfetti.models.Shape
-import nl.dionsegijn.konfetti.models.Size
 
 class CompletionActivity : Immersive() {
     override fun onCreate(savedInstanceState: Bundle?) {

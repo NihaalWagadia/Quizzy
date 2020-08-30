@@ -1,4 +1,4 @@
-package com.example.quizzydizzy
+package com.puzz.quizzydizzy
 
 import android.os.Bundle
 import android.view.View

@@ -1,43 +1,25 @@
-package com.example.quizzydizzy
+package com.puzz.quizzydizzy
 
-import android.app.Activity
-import android.app.Service
-import android.app.backup.FileBackupHelper
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.media.AudioAttributes
 import android.media.MediaPlayer
-import android.media.SoundPool
 import android.net.ConnectivityManager
-import android.net.Network
 import android.net.NetworkInfo
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
-import android.widget.Toolbar
-import androidx.appcompat.widget.ViewUtils
-import com.example.quizzydizzy.questionList.Question
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.MobileAds
-import com.google.android.gms.ads.RequestConfiguration
-import com.google.android.gms.ads.reward.RewardItem
-import com.google.android.gms.ads.reward.RewardedVideoAd
-import com.google.android.gms.ads.reward.RewardedVideoAdListener
+import com.puzz.quizzydizzy.questionList.Question
+
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_play.*
-import java.lang.reflect.Type
-import java.util.*
 import kotlin.collections.ArrayList
 
-class PlayAct : Immersive(), RewardedVideoAdListener {
+class PlayAct : Immersive() {
 
 
     private var mCurrentPos: Int = 1
@@ -46,7 +28,6 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
     internal var mMediaPlayer: MediaPlayer? = null
     var muted: Int = 0
     var mFromLevel: Int = -1
-    private lateinit var mRewardedVideoAd: RewardedVideoAd
     var connectivity: ConnectivityManager? = null
     var info : NetworkInfo? =null
 
@@ -54,10 +35,6 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
-        MobileAds.initialize(this@PlayAct)
-        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
-        mRewardedVideoAd.rewardedVideoAdListener = this
-        loadRewardedVideoAd()
 
         mFromLevel = intent.getIntExtra("openLevel", mFromLevel)
         loadPreferences()
@@ -158,49 +135,18 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
     }
 
 
-    private fun loadRewardedVideoAd() {
-        mRewardedVideoAd.loadAd(
-            "ca-app-pub-7070236366094920/4019605717",
-            AdRequest.Builder().build()
 
-        )
-    }
 
     fun answerHint(v: View?) {
-        if(isConnected()) {
-            if (mRewardedVideoAd.isLoaded) {
-                mRewardedVideoAd.show()
-            }
-        }
-        else{
-            object : CountDownTimer(2000, 1000){
-                override fun onFinish() {
-                    internet_status.visibility = View.GONE
-                }
+        card_for_solution.visibility = View.VISIBLE
+        val question = mQuestionList!![mCurrentPos - 1]
+        sol.text = getString(question!!.topicSolution)
+        disableClicks()
 
-                override fun onTick(p0: Long) {
-                    internet_status.visibility = View.VISIBLE
-
-                }
-            }.start()
-        }
 
     }
 
-    private fun isConnected():Boolean
-    {
-        connectivity = this.getSystemService(Service.CONNECTIVITY_SERVICE) as ConnectivityManager
-        if(connectivity != null)
-        {
-            info = connectivity!!.activeNetworkInfo
-            if(info != null){
-                if(info!!.state == NetworkInfo.State.CONNECTED){
-                    return true
-                }
-            }
-        }
-        return false
-    }
+
 
     private fun disableClicks() {
         one.isClickable = false
@@ -261,6 +207,7 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
         if (question.questionStat) {
             question_image.text = getString(question!!.question)
             level_number.text = question!!.challengeNumber
+            question_image.movementMethod = ScrollingMovementMethod()
             Log.d("Challenge", question!!.challengeNumber)
 
         }
@@ -327,42 +274,6 @@ class PlayAct : Immersive(), RewardedVideoAdListener {
         muted = DataStore.getProperty(this, Constants.SHARED_FILENAME, Constants.PROPERTY_MUTED, muted)
         muted = intent.getIntExtra(Constants.PROPERTY_MUTED, muted)
 
-    }
-
-    override fun onRewardedVideoAdClosed() {
-        loadRewardedVideoAd()
-
-    }
-
-    override fun onRewardedVideoAdLeftApplication() {
-        TODO("Not yet implemented")
-    }
-
-    override fun onRewardedVideoAdLoaded() {
-
-    }
-
-
-    override fun onRewardedVideoAdOpened() {
-
-    }
-
-    override fun onRewardedVideoCompleted() {
-        loadRewardedVideoAd()
-    }
-
-    override fun onRewarded(p0: RewardItem?) {
-        card_for_solution.visibility = View.VISIBLE
-        val question = mQuestionList!![mCurrentPos - 1]
-        sol.text = getString(question!!.topicSolution)
-        disableClicks()
-    }
-
-    override fun onRewardedVideoStarted() {
-
-    }
-
-    override fun onRewardedVideoAdFailedToLoad(p0: Int) {
     }
 
 }

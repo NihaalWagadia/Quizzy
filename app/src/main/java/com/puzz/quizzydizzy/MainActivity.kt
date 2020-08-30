@@ -1,19 +1,13 @@
-package com.example.quizzydizzy
+package com.puzz.quizzydizzy
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.media.AudioManager
-import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
 import android.view.View
-import android.widget.Toast
-import com.example.quizzydizzy.questionList.Question
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import com.puzz.quizzydizzy.questionList.Question
 import kotlinx.android.synthetic.main.activity_main.*
 
 //0 is on

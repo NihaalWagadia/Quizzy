@@ -1,4 +1,4 @@
-package com.example.quizzydizzy
+package com.puzz.quizzydizzy
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

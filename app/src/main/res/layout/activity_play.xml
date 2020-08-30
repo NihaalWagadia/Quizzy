@@ -82,8 +82,9 @@
                         android:gravity="center_horizontal|center"
                         android:text="@string/question"
                         android:textColor="#090707"
-                        android:textSize="30sp"
+                        android:textSize="27sp"
                         android:textStyle="bold"
+                        android:scrollbars="vertical"
                         />
 
                     <ImageView
