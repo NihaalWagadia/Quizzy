@@ -13,13 +13,20 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import com.puzz.quizzydizzy.questionList.Question
+<<<<<<< HEAD:app/src/main/java/com/puzz/quizzydizzy/PlayAct.kt
 
+=======
+>>>>>>> 95b88c1a4003f8e0d3f0a7349074e97d74449603:app/src/main/java/com/puzz/quizzydizzy/PlayAct.kt
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_play.*
 import kotlin.collections.ArrayList
 
+<<<<<<< HEAD:app/src/main/java/com/puzz/quizzydizzy/PlayAct.kt
 class PlayAct : Immersive() {
+=======
+class PlayAct : Immersive(){
+>>>>>>> 95b88c1a4003f8e0d3f0a7349074e97d74449603:app/src/main/java/com/puzz/quizzydizzy/PlayAct.kt
 
 
     private var mCurrentPos: Int = 1
@@ -35,6 +42,13 @@ class PlayAct : Immersive() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
+<<<<<<< HEAD:app/src/main/java/com/puzz/quizzydizzy/PlayAct.kt
+=======
+//        MobileAds.initialize(this@PlayAct)
+//        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
+//        mRewardedVideoAd.rewardedVideoAdListener = this
+//        loadRewardedVideoAd()
+>>>>>>> 95b88c1a4003f8e0d3f0a7349074e97d74449603:app/src/main/java/com/puzz/quizzydizzy/PlayAct.kt
 
         mFromLevel = intent.getIntExtra("openLevel", mFromLevel)
         loadPreferences()
@@ -138,6 +152,7 @@ class PlayAct : Immersive() {
 
 
     fun answerHint(v: View?) {
+<<<<<<< HEAD:app/src/main/java/com/puzz/quizzydizzy/PlayAct.kt
         card_for_solution.visibility = View.VISIBLE
         val question = mQuestionList!![mCurrentPos - 1]
         sol.text = getString(question!!.topicSolution)
@@ -147,6 +162,16 @@ class PlayAct : Immersive() {
     }
 
 
+=======
+
+        card_for_solution.visibility = View.VISIBLE
+        val question = mQuestionList!![mCurrentPos - 1]
+        sol.text = getString(question!!.topicSolution)
+        disableClicks()
+
+    }
+
+>>>>>>> 95b88c1a4003f8e0d3f0a7349074e97d74449603:app/src/main/java/com/puzz/quizzydizzy/PlayAct.kt
 
     private fun disableClicks() {
         one.isClickable = false
@@ -276,4 +301,20 @@ class PlayAct : Immersive() {
 
     }
 
+<<<<<<< HEAD:app/src/main/java/com/puzz/quizzydizzy/PlayAct.kt
 }
+=======
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+>>>>>>> 95b88c1a4003f8e0d3f0a7349074e97d74449603:app/src/main/java/com/puzz/quizzydizzy/PlayAct.kt
