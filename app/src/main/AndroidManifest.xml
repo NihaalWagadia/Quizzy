@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.puzz.quizzydizzy">
-<<<<<<< HEAD
 
-=======
->>>>>>> 95b88c1a4003f8e0d3f0a7349074e97d74449603
 
     <application
         android:allowBackup="true"
@@ -14,10 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 95b88c1a4003f8e0d3f0a7349074e97d74449603
         <activity android:name="com.puzz.quizzydizzy.CompletionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme"/>
